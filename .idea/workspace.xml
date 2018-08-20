@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aa46fc39-0277-40fb-8c0d-c0bc82776dc2" name="Default" comment="" />
+    <list default="true" id="aa46fc39-0277-40fb-8c0d-c0bc82776dc2" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shuledigital.sql" beforeDir="false" afterPath="$PROJECT_DIR$/shuledigital.sql" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,11 +14,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="update-user.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="page-allusers.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Manager/page-allusers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="99" column="14" selection-end-line="119" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page-parents.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Manager/page-parents.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-390">
+              <caret line="72" column="85" selection-start-line="72" selection-start-column="85" selection-end-line="72" selection-end-column="85" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page-exams.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Manager/page-exams.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="32" column="18" lean-forward="true" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update-user.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Manager/update-user.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+            <state relative-caret-position="254">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
@@ -110,7 +140,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Secretary/page-teachers.php" />
         <option value="$PROJECT_DIR$/Manager/page-inventory.php" />
         <option value="$PROJECT_DIR$/Secretary/page-newstudents.php" />
         <option value="$PROJECT_DIR$/Secretary/updatesubject.php" />
@@ -151,7 +180,6 @@
         <option value="$PROJECT_DIR$/Manager/page-students.php" />
         <option value="$PROJECT_DIR$/Manager/page-addparent.php" />
         <option value="$PROJECT_DIR$/Manager/page-newparent.php" />
-        <option value="$PROJECT_DIR$/Manager/page-parents.php" />
         <option value="$PROJECT_DIR$/Manager/delete-users.php" />
         <option value="$PROJECT_DIR$/Manager/page-editstuff.php" />
         <option value="$PROJECT_DIR$/Manager/page-addstuff.php" />
@@ -161,6 +189,8 @@
         <option value="$PROJECT_DIR$/Manager/page-editusers.php" />
         <option value="$PROJECT_DIR$/Manager/update-cert.php" />
         <option value="$PROJECT_DIR$/Manager/update-user.php" />
+        <option value="$PROJECT_DIR$/Manager/page-parents.php" />
+        <option value="$PROJECT_DIR$/Manager/page-exams.php" />
       </list>
     </option>
   </component>
@@ -188,6 +218,11 @@
             <path>
               <item name="shule" type="b2602c69:ProjectViewProjectNode" />
               <item name="shule" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="shule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shule" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Manager" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -300,12 +335,12 @@
       <workItem from="1534594793315" duration="20955000" />
       <workItem from="1534639123520" duration="17987000" />
       <workItem from="1534663892253" duration="4962000" />
-      <workItem from="1534691936294" duration="5040000" />
+      <workItem from="1534691936294" duration="6467000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="368679000" />
+    <option name="totallyTimeSpent" value="370106000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1376" height="744" extended-state="6" />
@@ -376,13 +411,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Manager/page-editusers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2625">
-          <caret line="125" column="47" selection-start-line="125" selection-start-column="47" selection-end-line="125" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Secretary/page-items.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -602,13 +630,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Manager/page-newparent.php" />
-    <entry file="file://$PROJECT_DIR$/Manager/page-parents.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="92" column="47" selection-start-line="92" selection-start-column="47" selection-end-line="92" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Manager/newteacher.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-313" />
@@ -670,13 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Manager/page-allusers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="96" column="74" selection-start-line="96" selection-start-column="74" selection-end-line="96" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Manager/page-user.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -706,8 +720,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Manager/update-user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+        <state relative-caret-position="254">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manager/page-allusers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="99" column="14" selection-end-line="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manager/page-parents.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-390">
+          <caret line="72" column="85" selection-start-line="72" selection-start-column="85" selection-end-line="72" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manager/page-exams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="32" column="18" lean-forward="true" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
         </state>
       </provider>
     </entry>

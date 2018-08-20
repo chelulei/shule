@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 15, 2018 at 09:01 AM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 7.2.5
+-- Generation Time: Aug 20, 2018 at 03:24 AM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,23 +25,159 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `activity_log`
+--
+
+CREATE TABLE `activity_log` (
+  `activity_log_id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `date` varchar(25) NOT NULL,
+  `action` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `activity_log`
+--
+
+INSERT INTO `activity_log` (`activity_log_id`, `username`, `date`, `action`) VALUES
+(1, 'noel.titus', '2016-10-24 09:12:05', 'Add Class Form 6'),
+(2, 'noel.titus', '2016-10-24 09:12:58', 'Edit Class Form 6'),
+(3, 'noel.titus', '2016-10-24 09:15:07', 'Add Student aaa bbb'),
+(4, 'noel.titus', '2016-10-24 09:15:36', 'Updated Student aaa bbb'),
+(5, 'noel.titus', '2016-10-24 09:17:50', 'Add Student buel bol'),
+(6, 'noel.titus', '2016-10-24 09:23:17', 'Add User abdul.hemedy');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `aprjun`
+--
+
+CREATE TABLE `aprjun` (
+  `aprjun_id` int(11) NOT NULL,
+  `student_id` int(11) NOT NULL,
+  `class` varchar(25) NOT NULL,
+  `class_fee` int(11) NOT NULL,
+  `status` varchar(25) NOT NULL,
+  `status_fee` int(11) NOT NULL,
+  `fee` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `aprjun`
+--
+
+INSERT INTO `aprjun` (`aprjun_id`, `student_id`, `class`, `class_fee`, `status`, `status_fee`, `fee`) VALUES
+(1, 1, 'Form 6', 250000, 'half', 125000, 0),
+(2, 2, 'Form 6', 250000, 'paying', 250000, 250000);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `attendance`
+--
+
+CREATE TABLE `attendance` (
+  `id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `day` varchar(255) NOT NULL,
+  `student` int(11) NOT NULL,
+  `class_id` int(11) NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `remarks` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `attendance`
+--
+
+INSERT INTO `attendance` (`id`, `date`, `day`, `student`, `class_id`, `status`, `remarks`) VALUES
+(89, '2018-08-08', 'Morning', 14, 34, 'Present', ''),
+(90, '2018-08-08', 'Morning', 15, 34, 'Present', ''),
+(91, '2018-08-02', 'Morning', 14, 34, 'Present', ''),
+(92, '2018-08-02', 'Morning', 15, 34, 'Present', ''),
+(93, '2018-08-09', ' Afternoon', 17, 38, 'Present', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `class`
 --
 
 CREATE TABLE `class` (
   `classId` int(50) NOT NULL,
   `Class` varchar(50) NOT NULL,
-  `Classteacher` varchar(50) NOT NULL,
+  `Classteacher` int(11) NOT NULL,
   `Nostudents` int(50) NOT NULL,
-  `Status` varchar(50) NOT NULL
+  `students` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `class`
 --
 
-INSERT INTO `class` (`classId`, `Class`, `Classteacher`, `Nostudents`, `Status`) VALUES
-(1, 'Scinc', 'kim', 34, 'Activ');
+INSERT INTO `class` (`classId`, `Class`, `Classteacher`, `Nostudents`, `students`) VALUES
+(38, 'english 11', 3, 40, 1),
+(41, 'cosmas', 3, 777, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `event`
+--
+
+CREATE TABLE `event` (
+  `Event_id` int(11) NOT NULL,
+  `Title` varchar(255) NOT NULL,
+  `Start` date NOT NULL,
+  `End` date NOT NULL,
+  `Description` text NOT NULL,
+  `Audience` varchar(255) NOT NULL,
+  `Venue` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `event`
+--
+
+INSERT INTO `event` (`Event_id`, `Title`, `Start`, `End`, `Description`, `Audience`, `Venue`) VALUES
+(2, 'josken', '2018-08-06', '2018-08-06', '', 'All', 'jjj');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `events`
+--
+
+CREATE TABLE `events` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `start_event` datetime NOT NULL,
+  `end_event` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `exams`
+--
+
+CREATE TABLE `exams` (
+  `exam_id` int(11) NOT NULL,
+  `exam` varchar(255) NOT NULL,
+  `term` varchar(255) NOT NULL,
+  `class` int(11) NOT NULL,
+  `subject` int(11) NOT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `exams`
+--
+
+INSERT INTO `exams` (`exam_id`, `exam`, `term`, `class`, `subject`, `date`) VALUES
+(15, 'exam 7', 'Term 2', 38, 0, '2018-08-21'),
+(16, 'exam 10', 'Term 1', 38, 5, '2018-08-26');
 
 -- --------------------------------------------------------
 
@@ -75,12 +211,24 @@ INSERT INTO `giveitems` (`id`, `date`, `item`, `quanitity`, `givento`, `comment`
 --
 
 CREATE TABLE `grade` (
-  `classid` int(50) NOT NULL,
-  `class` varchar(50) NOT NULL,
-  `classteacher` varchar(50) NOT NULL,
-  `Nostudents` int(50) NOT NULL,
-  `status` varchar(50) NOT NULL
+  `gradeid` int(11) NOT NULL,
+  `user` int(11) NOT NULL,
+  `student` int(11) NOT NULL,
+  `year` varchar(255) NOT NULL,
+  `term` varchar(255) NOT NULL,
+  `subject` int(11) NOT NULL,
+  `exam` varchar(255) NOT NULL,
+  `score` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `grade`
+--
+
+INSERT INTO `grade` (`gradeid`, `user`, `student`, `year`, `term`, `subject`, `exam`, `score`) VALUES
+(4, 3, 12, '2018', 'Term2', 0, 'midterm', 70),
+(5, 3, 17, '2018', 'Term 3', 0, 'midterm', 70),
+(7, 3, 11, '2017', 'Term 1', 5, 'midterm', 80);
 
 -- --------------------------------------------------------
 
@@ -89,12 +237,21 @@ CREATE TABLE `grade` (
 --
 
 CREATE TABLE `gradingsystem` (
-  `idno` int(50) NOT NULL,
-  `Title` varchar(50) NOT NULL,
-  `Passmark` varchar(50) NOT NULL,
-  `Createdby` date NOT NULL,
-  `Createdon` date NOT NULL
+  `id` int(11) NOT NULL,
+  `user` int(11) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `low_mark` varchar(50) NOT NULL,
+  `high_mark` int(11) NOT NULL,
+  `createdon` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `aggregate` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `gradingsystem`
+--
+
+INSERT INTO `gradingsystem` (`id`, `user`, `subject`, `low_mark`, `high_mark`, `createdon`, `aggregate`) VALUES
+(1, 17, '5', ' 80', 60, '2018-08-18 23:31:27', 1);
 
 -- --------------------------------------------------------
 
@@ -136,8 +293,7 @@ CREATE TABLE `items` (
 --
 
 INSERT INTO `items` (`itemsIdno`, `Date`, `Productname`, `Quantity`, `Unitprice`, `Total`, `Person`, `Receipt`, `Description`) VALUES
-(1, '2018-07-17', 'pencils', 23, 10, 230, 'Female', '35884070_10209863814791713_6045226568597372928_n.j', 'pencils'),
-(2, '2018-07-25', 'kit', 23, 10, 2320, 'Male', 'adwcleaner_7.2.1.exe', 'jhdijihs');
+(10, '2018-08-19', 'pencil', 50, 10, 500, 'Principal', 'drivers envc.png', '');
 
 -- --------------------------------------------------------
 
@@ -147,9 +303,64 @@ INSERT INTO `items` (`itemsIdno`, `Date`, `Productname`, `Quantity`, `Unitprice`
 
 CREATE TABLE `leaving` (
   `leavingid` int(50) NOT NULL,
-  `Activities` varchar(50) NOT NULL,
-  `Remarks` varchar(50) NOT NULL
+  `Student` int(11) NOT NULL,
+  `activities` text NOT NULL,
+  `remarks` text NOT NULL,
+  `lev_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `leaving`
+--
+
+INSERT INTO `leaving` (`leavingid`, `Student`, `activities`, `remarks`, `lev_date`) VALUES
+(8, 12, 'nnnn', 'mikeeee', '2019-08-08');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `medical`
+--
+
+CREATE TABLE `medical` (
+  `medic_id` int(11) NOT NULL,
+  `Student` int(11) NOT NULL,
+  `Date` date NOT NULL,
+  `Report` varchar(255) NOT NULL,
+  `Action` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `User` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `medical`
+--
+
+INSERT INTO `medical` (`medic_id`, `Student`, `Date`, `Report`, `Action`, `description`, `User`) VALUES
+(9, 11, '2018-08-08', 'injection', 'inject', ' vv', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `placements`
+--
+
+CREATE TABLE `placements` (
+  `place_id` int(11) NOT NULL,
+  `Student` int(11) NOT NULL,
+  `Start_date` date NOT NULL,
+  `Position` varchar(255) NOT NULL,
+  `Class` int(11) NOT NULL,
+  `Date_upto` date NOT NULL,
+  `Description` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `placements`
+--
+
+INSERT INTO `placements` (`place_id`, `Student`, `Start_date`, `Position`, `Class`, `Date_upto`, `Description`) VALUES
+(1, 11, '2018-08-02', 'Dorm Captain', 34, '2018-08-21', '                                             lorem                                                                                                                                                               ');
 
 -- --------------------------------------------------------
 
@@ -194,20 +405,24 @@ CREATE TABLE `students` (
   `Email` varchar(50) NOT NULL,
   `Formerschool` varchar(50) NOT NULL,
   `Entrymarks` int(50) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `Activities` varchar(50) NOT NULL,
-  `Remarks` varchar(50) NOT NULL
+  `Remarks` varchar(50) NOT NULL,
+  `Suspension` varchar(255) NOT NULL DEFAULT 'suspend'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`adm_No`, `Surname`, `Firstname`, `Middlename`, `Dateofbirth`, `Gender`, `Class`, `Homeaddress`, `Parentname`, `Phone`, `Email`, `Formerschool`, `Entrymarks`, `Activities`, `Remarks`) VALUES
-(1, 'ndfskjh', 'hsdfjkjh', 'jhfusdh i', '1994-12-23', 'Female', 'KFDHSNHKJH', 'RHFD', 'FJDSNKH', '0900839048', 'NDSD@GMAIl.com', 'huysgyudf', 0, '', ''),
-(2, 'Koech', 'Jemimah', 'Chepkorir', '2014-10-04', 'Female', 'Pre-primary one', 'Kutete 51', 'Stella Koech', '09098489327', 'Stellagmail.com', 'None', 0, '', ''),
-(3, 'Cherono', 'Chepkemoi', 'Mercy', '1992-12-12', 'Female', 'From 2', 'Mulot', 'Chirchir Amos', '07873468726', 'chirchir@gmail.com', 'amalo ', 0, '', ''),
-(4, 'Cherono', 'Chepkemoi', 'Mercy', '1992-12-12', 'Female', 'From 2', 'Mulot', 'Chirchir Amos', '07873468726', 'chirchir@gmail.com', 'amalo ', 0, '', ''),
-(5, 'Mercy ', 'Nancy', 'Chelangat', '1992-11-30', 'Female', 'form 1', 'mulot ', 'dad kim', '0732874364', 'sarah@gmail.com', 'kim kim', 0, '', '');
+INSERT INTO `students` (`adm_No`, `Surname`, `Firstname`, `Middlename`, `Dateofbirth`, `Gender`, `Class`, `Homeaddress`, `Parentname`, `Phone`, `Email`, `Formerschool`, `Entrymarks`, `date`, `Activities`, `Remarks`, `Suspension`) VALUES
+(11, 'mike', 'jos', 'josken', '2018-08-08', 'Male', '41', '550', 'josken', '49994944', 'jos@yahoo.com', 'kipkoror', 500, '2018-08-20 01:19:02', '', '', 'suspend'),
+(12, 'bomori', 'bomori', 'josken', '2018-08-22', 'Male', '41', '400', 'josken', '6666', 'jos@yahoo.com', 'kipkoror', 6000, '2018-08-20 01:19:04', '', '', 'suspend'),
+(13, 'chebochok', 'joskeni', 'daniel', '2018-08-14', 'Male', '32', '200b', 'josken', '67899', 'jos@yahoo.com', 'kipkoror', 600, '0000-00-00 00:00:00', '', '', ''),
+(14, 'josken', 'bomori', 'josken', '2018-08-09', 'Male', '34', 'ggg', 'bbbb', '888888888', 'jos@gmail.com', 'ccccc', 77, '0000-00-00 00:00:00', '', '', ''),
+(15, 'bomori', 'sikilai', 'dan', '2018-08-14', 'Male', '34', '300b', 'mike', '29999', 'jos@gmail.com', 'kk', 600, '0000-00-00 00:00:00', '', '', ''),
+(16, 'new student', 'new', 'new', '2018-08-08', 'Female', '36', '200b', 'new parent', '00000', 'new@gmail.com', 'nairo', 490, '2018-08-12 16:00:00', '', '', ''),
+(17, 'mike', 'mike', 'mike', '2018-08-01', 'Female', '38', 'mike', 'mike', '7777', 'jos@yahoo.com', 'gggg', 800, '2018-08-20 01:18:58', '', '', 'suspended');
 
 -- --------------------------------------------------------
 
@@ -218,7 +433,7 @@ INSERT INTO `students` (`adm_No`, `Surname`, `Firstname`, `Middlename`, `Dateofb
 CREATE TABLE `subject` (
   `SubIdNo` int(50) NOT NULL,
   `Name` varchar(50) NOT NULL,
-  `Code` varchar(50) NOT NULL,
+  `Code` varchar(2555) NOT NULL,
   `Type` varchar(50) NOT NULL,
   `Description` varchar(50) NOT NULL,
   `Class` varchar(50) NOT NULL,
@@ -230,10 +445,10 @@ CREATE TABLE `subject` (
 --
 
 INSERT INTO `subject` (`SubIdNo`, `Name`, `Code`, `Type`, `Description`, `Class`, `Term`) VALUES
-(1, 'Kiswahili', '', 'Elective Subject', 'pre-primary', 'Form 1', 'Term 1'),
-(2, 'English', '033', 'General Subject', 'Introductory', 'Form 2', 'Term 2'),
-(3, 'Science', '006', 'General Subject', 'Advanced Science', 'Form 3', 'Term 1'),
-(4, 'dress', 'uihie', 'Elective Subject', 'gdfhsgh', 'Form 1', 'Term 1');
+(5, 'prono', '666', 'Term 2', '                 lorem                            ', '34', 'Term 1'),
+(8, 'bb', '99', 'Elective Subject', 'bbbb', '35', 'Term 2'),
+(10, 'Seceretary', '77', 'Term 1', '                   lorem                          ', '38', 'Term 1'),
+(12, 'mike', '888', 'General Subject', '8888', '41', 'Term 3');
 
 -- --------------------------------------------------------
 
@@ -253,12 +468,12 @@ CREATE TABLE `teacher` (
   `Phone` int(50) NOT NULL,
   `Classes` varchar(50) NOT NULL,
   `Designation` varchar(50) NOT NULL,
-  `Homeaddess` varchar(50) NOT NULL,
-  `DateEmp` int(50) NOT NULL,
-  `YearsExp` date NOT NULL,
+  `DateEmp` date NOT NULL,
+  `YearsExp` varchar(255) NOT NULL,
   `Email` varchar(50) NOT NULL,
   `Resume` int(20) NOT NULL,
   `Salary` int(50) NOT NULL,
+  `Date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `Status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -266,13 +481,14 @@ CREATE TABLE `teacher` (
 -- Dumping data for table `teacher`
 --
 
-INSERT INTO `teacher` (`Idno`, `TSC_No`, `Surname`, `Firstname`, `Middlename`, `Dateofbirth`, `Gender`, `Homeaddress`, `Phone`, `Classes`, `Designation`, `Homeaddess`, `DateEmp`, `YearsExp`, `Email`, `Resume`, `Salary`, `Status`) VALUES
-(1, 2147483647, 'fdsjhui', 'dnfjkh', 'jfdshjk', '2002-12-31', 'Female', 'dhsfh', 2147483647, '45', 'Teacher', '', 2015, '0000-00-00', 'hdfs@gmail.com', 0, 34000, ''),
-(2, 17371718, 'home', 'hdhsfdf', 'dfdsfajshfd', '1992-12-02', 'Female', 'hjdgash', 90934289, '', 'Principal', '', 1992, '0000-00-00', 'dshj@gmail.com', 35971883, 34000, ''),
-(3, 123123, 'jshjkjkfdskk', 'djksndfkj', 'mkdsjk', '2012-12-12', 'Female', 'jkdjsjk', 939009484, '', 'Teacher', '', 2018, '0000-00-00', 'jdskj@gmail.com', 0, 0, ''),
-(4, 191393923, 'rono', 'kim', 'kem', '1992-12-12', 'Male', 'kimoi', 90382094, '4', 'Principal', '', 1993, '0000-00-00', 'kimoi@gmail.com', 0, 34000, ''),
-(5, 12334455, 'yhghhihyg', 'hgguhuytwewwe', 'hbgjhjkh', '0993-12-21', 'Male', 'dffghhhh', 2147483647, '34', 'Principal', '', 1994, '0000-00-00', 'ghhjkkj@gmail.com', 0, 34000, ''),
-(6, 0, 'hello', 'hello', 'hello', '1998-12-12', 'Female', 'hello', 2147483647, '2', 'Deputy Principal', '', 1989, '0000-00-00', 'hello@gmail.com', 0, 23400, 'Active');
+INSERT INTO `teacher` (`Idno`, `TSC_No`, `Surname`, `Firstname`, `Middlename`, `Dateofbirth`, `Gender`, `Homeaddress`, `Phone`, `Classes`, `Designation`, `DateEmp`, `YearsExp`, `Email`, `Resume`, `Salary`, `Date`, `Status`) VALUES
+(1, 2147483647, 'mike', 'mike', 'mike', '2002-12-31', 'Male', 'dhsfh', 2147483647, '45', 'Deputy Principal', '2018-07-02', '20', 'hdfs@gmail.com', 0, 50000, '2018-08-18 07:14:37', ''),
+(2, 17371718, 'home', 'hdhsfdf', 'dfdsfajshfd', '1992-12-02', 'Female', 'hjdgash', 90934289, '555', 'Deputy Principal', '2018-07-18', '555', 'dshj@gmail.com', 0, 34000, '2018-08-19 03:52:52', ''),
+(3, 123123, 'jshjkjkfdskk', 'djksndfkj', 'mkdsjk', '2012-12-12', 'Female', 'jkdjsjk', 939009484, '', 'Teacher', '0000-00-00', '', 'jdskj@gmail.com', 0, 0, '2018-08-13 11:59:44', ''),
+(4, 191393923, 'rono', 'kim', 'kem', '1992-12-12', 'Male', 'kimoi', 90382094, '4', 'Principal', '0000-00-00', '', 'kimoi@gmail.com', 0, 34000, '2018-08-13 11:59:44', ''),
+(5, 12334455, 'yhghhihyg', 'hgguhuytwewwe', 'hbgjhjkh', '0993-12-21', 'Male', 'dffghhhh', 2147483647, '34', 'Principal', '0000-00-00', '', 'ghhjkkj@gmail.com', 0, 34000, '2018-08-13 11:59:44', ''),
+(6, 0, 'hello', 'hello', 'hello', '1998-12-12', 'Female', 'hello', 2147483647, '2', 'Deputy Principal', '0000-00-00', '', 'hello@gmail.com', 0, 23400, '2018-08-13 11:59:44', 'Active'),
+(7, 555, 'ptum', 'ptum', 'potum', '2018-07-12', 'Female', 'RHFD', 2147483647, '8', 'Principal', '2018-07-11', '99', 'NDSD@GMAIl.com', 0, 8000, '2018-08-13 11:59:44', 'Active');
 
 -- --------------------------------------------------------
 
@@ -291,24 +507,21 @@ CREATE TABLE `user` (
   `password` varchar(50) NOT NULL,
   `role` varchar(100) NOT NULL,
   `status` varchar(50) NOT NULL,
-  `Login` date NOT NULL,
-  `Description` varchar(50) NOT NULL
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `Login` date NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `Firstname`, `Middlename`, `Surname`, `Phone`, `Email`, `password`, `role`, `status`, `Login`, `Description`) VALUES
-(1, 'sarah', 'chero', 'Akinyi', 'Omondi', '08738762874', '', '12345', 'Secretary', '', '0000-00-00', ''),
-(2, 'kim', '', '', '', '', '', '12345', 'Manager', '', '0000-00-00', ''),
-(3, 'meda', '', '', '', '', '', '12345', 'Teacher', '', '0000-00-00', ''),
-(13, 'GTkoikeldo', 'Grace', 'Towett', 'koikeldo', '073465729', 'koikeldo@gmail.com', '89ea1c85de76a90480e83329027820c1', 'Secretary', 'active', '0000-00-00', ''),
-(6, 'Ann', '', '', '', '', '', '12345', 'Accountant', '', '0000-00-00', ''),
-(7, 'XYZ', '', '', '', '', '', '12345', 'moderator', '', '0000-00-00', ''),
-(8, '', 'sarah', 'chepwogen', 'Towett', '099271398', 'hdsdgfh@gmail.com', '', 'Teacher', '', '0000-00-00', ''),
-(10, '', 'Joan Cherono', 'menona', 'munene', '0930210104', 'menene@gmail.com', '', 'Teacher', 'active', '0000-00-00', ''),
-(14, 'AkChirchir', 'Amos', 'kiprono', 'Chirchir', '97324768721', 'kiprono@gmail.com', '8ab7bbdf01a24e988c50c4cfe9557814', 'Teacher', 'active', '0000-00-00', '');
+INSERT INTO `user` (`id`, `username`, `Firstname`, `Middlename`, `Surname`, `Phone`, `Email`, `password`, `role`, `status`, `date`, `Login`) VALUES
+(3, 'teach', 'mike', 'mike', 'mike', '556788888', 'jos@yahoo.com', '1234', 'Deputy Principal', '', '2018-08-19 23:25:58', '0000-00-00'),
+(13, 'sec', 'Grace', 'Towett', 'koikeldo', '073465729', 'koikeldo@gmail.com', '1234', 'Secretary', 'active', '2018-08-18 05:00:13', '0000-00-00'),
+(8, 'towet', 'sarah', 'chepwogen', 'Towett', '099271398', 'hdsdgfh@gmail.com', '1234', 'Deputy Principal', '', '2018-08-20 00:48:09', '0000-00-00'),
+(10, '', 'Joan Cherono', 'menona', 'munene', '0930210104', 'menene@gmail.com', '', 'Teacher', 'active', '2018-08-13 12:22:20', '0000-00-00'),
+(14, 'AkChirchir', 'Amos', 'kiprono', 'Chirchir', '97324768721', 'kiprono@gmail.com', '8ab7bbdf01a24e988c50c4cfe9557814', 'Deputy Principal', 'active', '2018-08-19 23:25:23', '0000-00-00'),
+(20, 'jpmike', 'josken', 'prono', 'mike', '072485854728', 'jos@yahoo.com', '30269022e9d8f51beaabb52e5d0de2b7', 'Parent', 'active', '2018-08-20 00:52:57', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -330,17 +543,41 @@ INSERT INTO `usergroup` (`groupid`, `role`, `Description`) VALUES
 (1, 'Teacher', 'Teacher'),
 (2, 'Seceretary', 'Secretary'),
 (3, 'Teacher', 'Teacher'),
-(4, 'Seceretary', 'Secretary');
+(5, 'Parent', 'Parent');
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `attendance`
+--
+ALTER TABLE `attendance`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `class`
 --
 ALTER TABLE `class`
   ADD PRIMARY KEY (`classId`);
+
+--
+-- Indexes for table `event`
+--
+ALTER TABLE `event`
+  ADD PRIMARY KEY (`Event_id`);
+
+--
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `exams`
+--
+ALTER TABLE `exams`
+  ADD PRIMARY KEY (`exam_id`);
 
 --
 -- Indexes for table `giveitems`
@@ -352,13 +589,13 @@ ALTER TABLE `giveitems`
 -- Indexes for table `grade`
 --
 ALTER TABLE `grade`
-  ADD PRIMARY KEY (`classid`);
+  ADD PRIMARY KEY (`gradeid`);
 
 --
 -- Indexes for table `gradingsystem`
 --
 ALTER TABLE `gradingsystem`
-  ADD PRIMARY KEY (`idno`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `inventory`
@@ -377,6 +614,18 @@ ALTER TABLE `items`
 --
 ALTER TABLE `leaving`
   ADD PRIMARY KEY (`leavingid`);
+
+--
+-- Indexes for table `medical`
+--
+ALTER TABLE `medical`
+  ADD PRIMARY KEY (`medic_id`);
+
+--
+-- Indexes for table `placements`
+--
+ALTER TABLE `placements`
+  ADD PRIMARY KEY (`place_id`);
 
 --
 -- Indexes for table `stock`
@@ -419,10 +668,34 @@ ALTER TABLE `usergroup`
 --
 
 --
+-- AUTO_INCREMENT for table `attendance`
+--
+ALTER TABLE `attendance`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+
+--
 -- AUTO_INCREMENT for table `class`
 --
 ALTER TABLE `class`
-  MODIFY `classId` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `classId` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+
+--
+-- AUTO_INCREMENT for table `event`
+--
+ALTER TABLE `event`
+  MODIFY `Event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `events`
+--
+ALTER TABLE `events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `exams`
+--
+ALTER TABLE `exams`
+  MODIFY `exam_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `giveitems`
@@ -434,13 +707,13 @@ ALTER TABLE `giveitems`
 -- AUTO_INCREMENT for table `grade`
 --
 ALTER TABLE `grade`
-  MODIFY `classid` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `gradeid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `gradingsystem`
 --
 ALTER TABLE `gradingsystem`
-  MODIFY `idno` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `inventory`
@@ -452,13 +725,25 @@ ALTER TABLE `inventory`
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `itemsIdno` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `itemsIdno` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `leaving`
 --
 ALTER TABLE `leaving`
-  MODIFY `leavingid` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `leavingid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `medical`
+--
+ALTER TABLE `medical`
+  MODIFY `medic_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `placements`
+--
+ALTER TABLE `placements`
+  MODIFY `place_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `stock`
@@ -470,31 +755,31 @@ ALTER TABLE `stock`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `adm_No` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `adm_No` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `subject`
 --
 ALTER TABLE `subject`
-  MODIFY `SubIdNo` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `SubIdNo` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `teacher`
 --
 ALTER TABLE `teacher`
-  MODIFY `Idno` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Idno` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `usergroup`
 --
 ALTER TABLE `usergroup`
-  MODIFY `groupid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `groupid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
