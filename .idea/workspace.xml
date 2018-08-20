@@ -14,7 +14,7 @@
       <file leaf-file-name="update-user.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Manager/update-user.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="569">
+            <state relative-caret-position="401">
               <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
             </state>
           </provider>
@@ -25,15 +25,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="231">
               <caret line="11" column="35" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page-editusers.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Manager/page-editusers.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-861">
-              <caret line="70" column="98" selection-start-line="70" selection-start-column="98" selection-end-line="70" selection-end-column="98" />
             </state>
           </provider>
         </entry>
@@ -198,11 +189,6 @@
               <item name="shule" type="b2602c69:ProjectViewProjectNode" />
               <item name="shule" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="shule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shule" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Manager" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -314,18 +300,18 @@
       <workItem from="1534594793315" duration="20955000" />
       <workItem from="1534639123520" duration="17987000" />
       <workItem from="1534663892253" duration="4962000" />
-      <workItem from="1534691936294" duration="4029000" />
+      <workItem from="1534691936294" duration="5040000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="367668000" />
+    <option name="totallyTimeSpent" value="368679000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-8" width="1376" height="744" extended-state="7" />
+    <frame x="1358" y="-8" width="1376" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.14893617" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.16261399" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -720,7 +706,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Manager/update-user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
+        <state relative-caret-position="401">
           <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
         </state>
       </provider>

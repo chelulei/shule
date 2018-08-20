@@ -1,22 +1,19 @@
 
-<?php include 'head.php'; ?>
-<?php include 'count.php'; ?>
-<?php include 'sidebar.php'; ?>
-<!-- Left Panel -->
-
-<!-- Right Panel -->
+<?php
+include 'head.php';
+include 'sidebar.php';
+?>
 
 <div id="right-panel" class="right-panel">
-
     <!-- Header-->
-    <?php include '../Header.php'; ?>
+    <?php  include '../header.php';  ?>
+    <!-- /header -->
     <!-- Header-->
-
     <div class="breadcrumbs">
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Dashboard</h1>
+                    <h1>Dashboard </h1>
                 </div>
             </div>
         </div>
@@ -25,8 +22,10 @@
         <div class="col-sm-8">
             <div class="page-header float-right">
                 <div class="page-title">
+
                     <ol class="breadcrumb text-right">
-                        <!-- <li><a href="page-teacher.php" class="btn btn-info"><i class="fa fa-folder-open"></i>View Teachers</a></li> -->
+                        <li><a href="page-addstuff.php" class="btn btn-info"><i class="fa fa-plus"></i>Add New User</a></li>
+                        <!-- <li> <a href="deletelink" class="btn btn-info" onclick="return confirm('Are you sure?'" ><i class="fa fa-bars"></i>All User</a> </li> -->
 
                     </ol>
                 </div>
@@ -34,86 +33,87 @@
         </div>
     </div>
 
-    <div class="content mt-3">
-        <!--Errors starts -->
-        <?php include 'errors.php';?>
-        <!-- end errors -->
-        <div class="animated fadeIn">
-            <div class="row">
 
+    <div class="content mt-3">
+        <?php include 'errors.php';?>
+        <div class="animated fadeIn">
+
+            <div class="row">
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Parents List </strong>
+                            <strong class="card-title">Parents</strong>
+
+                            <!--FILTER BY RUNNING OUT, OUT OF STOCK AND CONSIGNED ITEMS-->
+                            <div class="col-md-2" style="margin-left: 85%">
+                            </div>
+                            <div class="card-body">
+                                <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Phone</th>
+                                        <th>Status</th>
+                                        <th>Users Roll</th>
+                                        <th>Last Login</th>
+                                        <th>Option</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+
+                                    <?php
+
+                                    //set counter variable
+                                    $counter = 1;
+
+                                    include 'connect.php';
+
+                                    $result = "SELECT * FROM user WHERE role='Parent'";
+                                    $select= mysqli_query($con,$result);
+
+                                    //start of loop for displaying products
+                                    while($row = mysqli_fetch_array($select)):
+
+                                        $id = $row['id'];
+                                        $Firstname = $row['Firstname'];
+                                        $Middlename = $row['Middlename'];
+                                        $Surname = $row['Surname'];
+                                        $Phone = $row['Phone'];
+                                        $Email = $row['Email'];
+                                        $role=$row['role'];
+                                        $status=$row['status'];
+                                        $Login=$row['Login'];
+
+
+
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $Surname.' '.$Firstname;?> </td>
+                                            <td><?php echo $row['Phone'];?> </td>
+                                            <td><?php echo ucwords($row['status']);?> </td>
+                                            <td><?php echo ($row['role']);?> </td>
+                                            <td><?php echo $row['Login'];?> </td>
+
+                                            <td>
+                                                <div class="btn-group" role="group" >
+                                                    <a href="page-user.php?view=<?php echo $id;?>" class="btn btn-outline-primary"></i>VIEW</a>
+                                                    <a href="page-editusers.php?edit=<?php echo $id;?>" class="btn btn-outline-info"><i class=" fa fa-edit"></i> Edit </a>
+                                                    <a  href="delete-users.php?delete=<?php echo $id;?>" class="btn btn-outline-danger delete_link"><i class=" fa fa-trash"></i> DELETE </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <?php endwhile;   ?>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                        <div class="card-body">
-                                  <table id="bootstrap-data-table" class="table table-striped table-bordered">
-                                              <thead>
-                                              <th>#</th>
-                                              <th>Name</th>
-                                              <th>Phone</th>  
-                                              <th>Address</th>
-                                              <th>Email</th>
-                                              <th>Status</th>
-                                              <th>Options</th>
-                                              </thead>
-                                              <tbody>
-                                                                  <tr>
-                                                  <td>1.</td> 
+                    </div><!-- .animated -->
+                </div><!-- .content -->
+            </div><!-- /#right-panel -->
+            <!-- Right Panel -->
 
-                                                  <td>Jorum Mwangi</td>
-                                                  <td>0724544545</td>
-                                                  <td></td>
-                                                  <td>jorum-016@gmail.com</td>
-                                                  <td><span class="label label-success">Active</span></td>
+            <!-- Edit modal -->
 
-                                                   <td width='350'>
-                                                  <div class='btn-group'>
-                                                          <a  class='btn btn-success' href='page-viewparents.php'><i class='fa fa-eye-open'></i> View</a>
-                                                   </div>
-                                                      <div class='btn-group'>
-                                                     <a  class='btn btn-primary' href='page-editparent.php'> <i class='fa fa-edit'></i> Edit</a>
-                                                      </div>
-                                                 <div class='btn-group'>
-                                                   <a onClick="return confirm('Are you sure you want to deactivate this parent')" class='btn btn-danger'  href='deactivate.php' ><i class='fa fa-trash'></i> Deactivate</a>
-                                                              </div>
-                                                                                                      </td>
-                                              </tr>
-                                                              <tr>
-                                                  <td>2.</td> 
-
-                                                  <td>FRANCIS MWAURA</td>
-                                                  <td>0725415263</td>
-                                                  <td></td>
-                                                  <td>francis-015@gmail.com</td>
-                                                  <td><span class="label label-success">Active</span></td>
-
-                                                  <td width='350'>
-                                                  <div class='btn-group'>
-                                                          <a  class='btn btn-success' href='page-viewparent.php'><i class='fa fa-eye-open'></i> View</a>
-                                                   </div>
-                                                      <div class='btn-group'>
-                                                     <a  class='btn btn-primary' href='#'> <i class='fa fa-edit'></i> Edit</a>
-                                                      </div>
-                                                 <div class='btn-group'>
-                                                   <a onClick="return confirm('Are you sure you want to deactivate this parent')" class='btn btn-danger'  href='#' ><i class='fa fa-trash'></i> Deactivate</a>
-                                                              </div>
-                                                                                                      </td>
-                                              </tr>
-
-                                            </tbody>
-                                          </table>
-                        </div>
-                    </div>
-
-                </div><!-- .animated -->
-            </div><!-- .content -->
-
-
-        </div><!-- /#right-panel -->
-
-        <!-- Right Panel -->
-        <?php  include 'footer.php'; ?>
-
-
-
+            <?php include 'footer.php'?>
