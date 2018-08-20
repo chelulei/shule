@@ -1,0 +1,120 @@
+<?php
+error_reporting(0);
+include 'head.php';
+?>
+<!-- Left Panel -->
+<!-- /#left-panel -->
+<?php include 'sidebar.php'; ?>
+<!-- Left Panel -->
+<!-- Right Panel -->
+<div id="right-panel" class="right-panel">
+  <!-- Header-->
+    <?php
+    include '../header.php';
+    ?>
+    <!-- Header-->
+<div class="breadcrumbs">
+        <div class="col-sm-4">
+            <div class="page-header float-left">
+                <div class="page-title">
+                    <h1>Dashboard</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <li><a href="page-students.php" class="btn btn-danger"><i class="fa fa-arrow-left" aria-hidden="true"></i></i>Back</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+</div>
+  <div class="content mt-3">
+    <div class="animated fadeIn">
+      <div class="row">
+
+       <div class="col-md-12">
+         <div class="card">
+           <div class="card-body">
+              <?php
+              include '../connect.php';
+
+              if (isset($_GET['info'])) {
+
+                $adm_No=$_GET['info'];
+
+                $qry = "SELECT * FROM students WHERE adm_No ='$adm_No'";
+                $run = $db->query($qry);
+                $rows = $run->fetch_assoc();
+
+                $_SESSION['student'] =$rows['adm_No'];
+                $Firstname=$rows['Firstname'];
+                $Middlename=$rows['Middlename'];
+                $Surname=$rows['Surname'];
+                $Class=$rows['Class'];
+                $Gender=$rows['Gender'];
+                $Homeaddress=$rows['Homeaddress'];
+                $Parentname=$rows['Parentname'];
+                $Phone=$rows['Phone'];
+                $Formerschool=$rows['Formerschool'];
+                $Entrymarks=$rows['Entrymarks'];
+                $Email=$rows['Email'];
+
+
+
+              }
+              ?>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="bg-info p-2 mb-2 text-white text-center">
+                            STUDENT DETAILS
+                        </div>
+                    </div>
+                    <!-- /.col-md-12 -->
+                        <div class="col-md-3 col-lg-3 " align="center">
+                            <img alt="User Pic" src="images/profile.png" class="img-thumbnail img-responsive">
+                        </div>
+
+                    <!-- /.col-m-3 -->
+                        <div class="col-md-4">
+                            Name: <strong><?php echo  $Surname.' '. $Firstname.' '. $Middlename; ?></strong><hr>
+                            Admin No: <strong><?php echo $rows['adm_No']; ?></strong><hr>
+                            Gender: <strong><?php echo  $Gender; ?></strong><hr>
+                            Date Of Birth: <strong><?php echo  $Entrymarks; ?></strong><hr>
+                            Class:<strong><?php echo  $Class; ?></strong><hr>
+                            Admitted By: <strong>mike</strong><hr>
+                        </div>
+                        <div class="col-md-4">
+                            Residential address:<strong> <?php echo   $Homeaddress; ?></strong><hr>
+                            Former school: <strong><?php echo $Formerschool; ?></strong><hr>
+                            Entry Marks: <strong><?php echo  $Entrymarks; ?></strong><hr>
+                            Parent's Name: <strong><?php echo   $Parentname; ?></strong><hr>
+                            Telephone No: <strong><?php echo $Phone; ?></strong><hr>
+                            Email: <strong><?php echo  $Email; ?></strong><hr>
+                        </div>
+                    <div class="col-md-12">
+                        <div class="bg-info p-2 mb-2 text-white text-center">
+                            OTHER DETAILS
+                        </div>
+                    </div>
+                        <hr>
+                        <div style="margin: 0 auto;">
+                            <div class="btn-group" role="group" aria-label="Basic example";">
+                            <button type="button" class="btn-outline-info btn-lg mr-1">Medical History</button>
+                            <button type="button" class="btn-outline-danger btn-lg btn-lg mr-1">Fees Details</button>
+                            <button type="button" class="btn-outline-success btn-lg mr-1">Academic Records</button>
+                        </div>
+                        </div>
+                        <!-- /.div -->
+
+</div>
+</div>
+</div>
+
+</div>
+</div><!-- .animated -->
+</div><!-- .content -->
+</div><!-- /#right-panel -->
+<?php include 'footer.php';   ?>
