@@ -24,12 +24,13 @@
 <script>
     jQuery(document).ready(function($){
 
-        $('#bootstrap-data-table-export').DataTable();
+        $('#bootstrap-data-table').DataTable();
 
         $(".delete_link").click(function(e){
             if(!confirm('Are you sure you want to delete this data?')){
                 e.preventDefault();
                 return false;
+                $(".delete_link").fadeOut('slow');
             }
             return true;
         });

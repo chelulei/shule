@@ -1,17 +1,10 @@
-
 <script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
 <script src="assets/js/vendor/jquery-ui.min.js"></script>
-<script src="assets/js/moment.min.js"></script>
-<script src="assets/js/fullcalendar.min.js"></script>
-<!--calender-->
-
 <script src="assets/js/lib/data-table/jquery.dataTables.min.js"></script>
 <script src="assets/js/lib/data-table/dataTables.bootstrap4.min.js"></script>
 <script src="assets/js/popper.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/plugins.js"></script>
 <script src="assets/js/main.js"></script>
-
 
 <!--<script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>-->
 <!--<script src="assets/js/lib/data-table/buttons.bootstrap.min.js"></script>-->
@@ -23,128 +16,104 @@
 <!--<script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>-->
 <script src="assets/js/lib/data-table/datatables-init.js"></script>
 
-<script>
-    jQuery(document).ready(function($){
-      //
-      // $(".delete_link").click(function(){
-      //
-      //     return confirm("Are you sure you want to delete?!!")
-      // });
+    <script>
+        var $ = jQuery;
+    $(document).ready(function() {
+        //Remove alert
+ window.setTimeout(function() {
+                $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                    $(this).remove();
+                });
+            }, 4000);
+    //clear URL     
+    if(typeof window.history.pushState == 'function') {
+        window.history.pushState({}, "Hide", '<?php echo $_SERVER['PHP_SELF'];?>');
+    }
+     /* edit students  */
 
         $(".delete_link").click(function(e){
-            if(!confirm('Are you sure you want to delete?')){
+            if(!confirm('Are you sure you want to delete this data?')){
                 e.preventDefault();
                 return false;
             }
             return true;
         });
 
-            $('#bootstrap-data-table').DataTable();
-        /*calenda*/
-        var calendar = $('#calender').fullCalendar({
-            editable:true,
-            header:{
-                left:'prev,next today',
-                center:'title',
-                right:'month,agendaWeek,agendaDay'
-            },
-            events: 'load.php',
-            selectable:true,
-            selectHelper:true,
-            select: function(start, end, allDay)
-            {
-                var title = prompt("Enter Event Title");
-                if(title)
-                {
-                    var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
-                    var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
-                    $.ajax({
-                        url:"insert.php",
-                        type:"POST",
-                        data:{title:title, start:start, end:end},
-                        success:function()
-                        {
-                            calendar.fullCalendar('refetchEvents');
-                            alert("Added Successfully");
-                        }
-                    })
-                }
-            },
-            editable:true,
-            eventResize:function(event)
-            {
-                var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
-                var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
-                var title = event.title;
-                var id = event.id;
-                $.ajax({
-                    url:"update.php",
-                    type:"POST",
-                    data:{title:title, start:start, end:end, id:id},
-                    success:function(){
-                        calendar.fullCalendar('refetchEvents');
-                        alert('Event Update');
-                    }
-                })
-            },
-
-            eventDrop:function(event)
-            {
-                var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
-                var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
-                var title = event.title;
-                var id = event.id;
-                $.ajax({
-                    url:"update.php",
-                    type:"POST",
-                    data:{title:title, start:start, end:end, id:id},
-                    success:function()
-                    {
-                        calendar.fullCalendar('refetchEvents');
-                        alert("Event Updated");
-                    }
-                });
-            },
-
-            eventClick:function(event)
-            {
-                if(confirm("Are you sure you want to remove it?"))
-                {
-                    var id = event.id;
-                    $.ajax({
-                        url:"delete.php",
-                        type:"POST",
-                        data:{id:id},
-                        success:function()
-                        {
-                            calendar.fullCalendar('refetchEvents');
-                            alert("Event Removed");
-                        }
-                    })
-                }
-            },
-
-        });
-        /* edit students  */
-        $(document).on('click', '.edit_g', function(){
-            var g_id = $(this).attr("id");
+        /*edit category*/
+        $(document).on('click', '.edit_cat', function(){
+            var c_id = $(this).attr("id");
             $.ajax({
                 url:"fetch.php",
                 method:"POST",
-                data:{g_id:g_id},
+                data:{c_id:c_id},
                 dataType:"json",
                 success:function(data){
                     console.log(data);
-                    $('#groupid').val(data.groupid);
-                    $('#Name').val(data.role);
-                    $('#Description').val(data.Description);
+                    $('#cid').val(data.cat_id);
+                    $('#cname').val(data.cat_name);
 
                 }
             });
         });
+        /*-----------------------------------------*/
 
+     $(document).on('click', '.edit_data', function(){  
+           var stud_id = $(this).attr("id");  
+           $.ajax({  
+                url:"fetch.php",  
+                method:"POST",  
+                data:{stud_id:stud_id},  
+                dataType:"json",  
+                success:function(data){
 
-        /**/
+                $('#adm_No').val(data. adm_No);  
+                $('#Surname').val(data.Surname);
+                $('#Middlename').val(data.Middlename);
+                $('#Firstname').val(data.Firstname);
+                $('#Dateofbirth').val(data.Dateofbirth);
+                $('#Gender').val(data.Gender);
+                $('#Class').val(data.Class);
+                $('#Homeaddress').val(data.Homeaddress);
+                $('#Parentname').val(data.Parentname);
+                $('#Phone').val(data.Phone);
+                $('#Email').val(data.Email);
+                $('#Formerschool').val(data.Formerschool);
+                $('#Entrymarks').val(data.Entrymarks);
+                }  
+           });  
+      });
+
+    /**/
+/* edit Teachers  */
+     $(document).on('click', '.edit_teach', function(){  
+           var teach_id = $(this).attr("id");  
+           $.ajax({  
+                url:"fetch.php",  
+                method:"POST",  
+                data:{teach_id :teach_id },  
+                dataType:"json",  
+                success:function(data){
+                $('#Idno').val(data.Idno);
+                $('#TSC_No').val(data. TSC_No);
+                $('#Surname').val(data.Surname);
+                 $('#Firstname').val(data.Firstname);
+                $('#Middlename').val(data.Middlename);
+                $('#Dateofbirth').val(data.Dateofbirth);
+                $('#Gender').val(data.Gender);
+                $('#Classes').val(data.Classes);
+                $('#Homeaddress').val(data.Homeaddress);
+                $('#Designation').val(data.Designation);
+                $('#Phone').val(data.Phone);
+                $('#Email').val(data.Email);
+                $('#YearsExp').val(data.YearsExp);
+                $('#Salary').val(data.Salary);
+                $('#DateEmp').val(data.DateEmp);
+               
+                }  
+           });  
+      });
+
+    /**/
 
         /* edit Teachers  */
         $(document).on('click', '.profile', function(){
@@ -176,106 +145,18 @@
             });
         });
 
-        /**/
-        //Remove alert
-        window.setTimeout(function() {
-            $(".alert").fadeTo(500, 0).slideUp(500, function(){
-                $(this).remove();
-            });
-        }, 4000);
 
-        //clear URL
-        if(typeof window.history.pushState == 'function') {
-            window.history.pushState({}, "Hide", '<?php echo $_SERVER['PHP_SELF'];?>');
-        }
+          $('#bootstrap-data-table-export').DataTable();
 
-        /*dynamic form*/
-        $("#add_row").on("click", function() {
-            // Dynamic Rows Code
-
-            // Get max row id and set new id
-            var newid = 0;
-            $.each($("#tab_logic tr"), function() {
-                if (parseInt($(this).data("id")) > newid) {
-                    newid = parseInt($(this).data("id"));
-                }
-            });
-            newid++;
-
-            var tr = $("<tr></tr>", {
-                id: "addr"+newid,
-                "data-id": newid
-            });
-
-            // loop through each td and create new elements with name of newid
-            $.each($("#tab_logic tbody tr:nth(0) td"), function() {
-                var cur_td = $(this);
-
-                var children = cur_td.children();
-
-                // add new td and element if it has a nane
-                if ($(this).data("name") != undefined) {
-                    var td = $("<td></td>", {
-                        "data-name": $(cur_td).data("name")
-                    });
-
-                    var c = $(cur_td).find($(children[0]).prop('tagName')).clone().val("");
-                    c.attr("name", $(cur_td).data("name") + newid);
-                    c.appendTo($(td));
-                    td.appendTo($(tr));
-                } else {
-                    var td = $("<td></td>", {
-                        'text': $('#tab_logic tr').length
-                    }).appendTo($(tr));
-                }
-            });
-
-            // add delete button and td
-
-            $("<td></td>").append(
-                $("<button class='btn btn-danger'><i class='fa fa-remove'></i></button>")
-                    .click(function() {
-                        $(this).closest("tr").remove();
-                    })
-            ).appendTo($(tr));
+           /* jQuery(".standardSelect").chosen({
+                disable_search_threshold: 10,
+                no_results_textt: "Oops, nothing found!",
+                width: "100%"
+            });*/
 
 
-            // add the new row
-            $(tr).appendTo($('#tab_logic'));
-
-            $(tr).find("td button.row-remove").on("click", function() {
-                $(this).closest("tr").remove();
-            });
         });
-
-
-
-
-        // Sortable Code
-        var fixHelperModified = function(e, tr) {
-            var $originals = tr.children();
-            var $helper = tr.clone();
-
-            $helper.children().each(function(index) {
-                $(this).width($originals.eq(index).width())
-            });
-
-            return $helper;
-        };
-
-        $(".table-sortable tbody").sortable({
-            helper: fixHelperModified
-        }).disableSelection();
-
-        $(".table-sortable thead").disableSelection();
-
-
-
-        $("#add_row").trigger("click");
-
-        /*end of jquery*/
-    });
-</script>
+    </script>
 
 </body>
 </html>

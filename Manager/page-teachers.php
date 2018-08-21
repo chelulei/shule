@@ -164,7 +164,12 @@
                         </div>
                     </div>
                 </div>
+            <style>
+                #profile{
+                    background-color: red;
+                }
 
+            </style>
  <div class="modal fade" id="scrollmodal1" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
@@ -175,7 +180,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                        <form class="form-validate form-horizontal" method="POST" action="editteacher.php" id="">  
+                        <form class="form-validate form-horizontal" method="POST" action="editteacher.php" id="profile">
                                       <input type="hidden" name="Idno" id="Idno" />
                             <div class="card-header">
                                 <strong>Teacher's Records</strong> 
@@ -195,6 +200,7 @@
                                     <div class="input-group">
                                         <!-- <div class="input-group-addon"><i class="fa fa-phone"></i></div> -->
                                         <input class="form-control"  id="Surname" name="Surname" type="text"  required=""  >
+                                        <hr>
                                     </div>
                                     <!-- <small class="form-text text-muted">ex. (999) 999-9999</small> -->
                                 </div>

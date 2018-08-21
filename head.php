@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="assets/scss/style.css">
     <link href="assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+<!--    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>-->
 
 </head>
 <body>

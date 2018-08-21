@@ -22,7 +22,17 @@
 
                     <h3 class="menu-title"> Main Menu </h3><!-- /.menu-title -->
 
-                        <li class="menu-item-has-children active dropdown">
+                    <li class="menu-item-has-children active dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-money"></i>School Fees</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-users"></i><a href="student-fees.php">Fees Payment</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="charts-flot.html">Flot Chart</a></li>
+                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="charts-peity.html">Peity Chart</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="menu-item-has-children active dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-building-o"></i>Finance Management</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-line-chart"></i><a href="charts-chartjs.html">Chart JS</a></li>

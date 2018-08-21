@@ -1,6 +1,6 @@
 <?php
 
- require('conect.php');
+include 'connect.php';
 
  if(isset($_POST['stud_id']))
  {
@@ -24,4 +24,14 @@ if(isset($_POST['teach_id']))
       echo json_encode($row);
  }
 
- ?>
+
+if(isset($_POST['c_id']))
+{
+    $id=$_POST['c_id'];
+
+    $cat = mysqli_query($con,"SELECT * FROM categories WHERE cat_id = '$id'");
+
+    $rows = mysqli_fetch_array($cat);
+    echo json_encode($rows);
+}
+

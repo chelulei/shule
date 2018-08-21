@@ -2,7 +2,19 @@
 <?php 
 include 'head.php';
 include 'sidebar.php';
+include 'connect.php';
+if (isset($_GET['del_id'])) {
 
+    $delete = "DELETE FROM categories WHERE cat_id='$_GET[del_id]'";
+
+    $run_delete= mysqli_query($con,$delete);
+
+    if($run_delete) {
+        header("Location:page-itemscategory.php?success=category has been deleted");
+    }else{
+        header("Location:page-itemscategory.php?error=Error!!!!!");
+    }
+}
 ?>
 
     <div id="right-panel" class="right-panel">
@@ -28,9 +40,15 @@ include 'sidebar.php';
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="page-inventory.php" class="btn btn-info"><i class="fa fa-arrow-left"></i> Back</a></li>
-                            <li><a href="page-management.php" class="btn btn-info"><i class="fa fa-folder-open"></i>Items</a></li>
-                      </a> </li>
+                            <li><a href="page-inventory.php" class="btn btn-danger"><i class="fa fa-arrow-left"></i> Back</a></li>
+                            <li>
+                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#firstModal">
+                                    <i class="fa fa-plus"></i>
+                                    New Category
+                                </a>
+                            </li>
+
+                            </a> </li>
                             <!-- <li><a href="#">Inventory Trend</a></li> -->
                             <!-- <li class="active">Inventory Gategory</li> -->
                         </ol>
@@ -40,6 +58,7 @@ include 'sidebar.php';
           </div>
                     
         <div class="content mt-3">
+            <?php include 'errors.php';?>
             <div class="animated fadeIn">
 
                 <div class="row">
@@ -52,59 +71,30 @@ include 'sidebar.php';
                         <div class="card-body">
 
                                   <table id="bootstrap-data-table" class="table table-striped table-bordered">
-                                    <thead>
+                                      <thead>
                                       <tr>
-                                        <th>#</th>
-
-                                        <th>Product Name</th>
-                                        <th>Quantity</th>
-                                        <th>Created By </th>
-                                        <th>Created on</th>
-                                        <th>Action</th>
-
+                                          <th>S.NO</th>
+                                          <th>Category Name</th>
+                                          <th>Edit</th>
+                                          <th>Delete</th>
                                       </tr>
-                                    </thead>
-                                    <tbody>
+                                      </thead>
+                                      <tbody>
+                                      <?php
+                                      $sql="SELECT * FROM categories";
+                                      $run_sql= mysqli_query($con,$sql);
+                                      while ($rows= mysqli_fetch_assoc($run_sql)):
+                                          $cat_id=$rows['cat_id'];
+                                      ?>
 
-
-                              <?php
-
-                            //set counter variable
-                            $counter = 1;
-
-                                include 'connect.php';
-
-                                $result = "SELECT * FROM items";
-                                $select= mysqli_query($con,$result);
-
-                                    //start of loop for displaying products
-                             while($row = mysqli_fetch_array($select)):
-
-                                        $Date=$row['Date'];
-                                        $Productname = $row['Productname'];
-                                        $Quantity=$row['Quantity'];
-                                        $Unitprice=$row['Unitprice'];
-                                        $Total=$row['Total'];
-                                        $Total=$row['Person'];
-                                        $Receipt=$row['Receipt'];
-                                        $Description=$row['Description'];
-
-                                          ?>
-                                         <tr>
-                                              <td><?php echo $counter;   $counter++; //increment counter by 1 on every pass
-                                              ?></td>
-                                              <td><?php echo ucwords($row['Productname']);?> </td>
-                                              <td><?php echo ucwords($row['Quantity']);?> </td>
-                                             <td><?php echo ucwords($row['Person']);?> </td>
-                                              <td><?php echo ucwords($row['Date']);?></td>
-
-                                              <td>
-
-                       <a type="button" class="btn btn-info" data-toggle="modal" data-target="#mediumModal"><i class="fa fa-edit"></i>Edit
-                      </a>
-                                              </td>
-                                    </tr>
-                                       <?php endwhile; ?>
+                      <tr>
+                        <td><?php  echo $rows['cat_id'];?></td>
+                       <td><?php echo  $rows['cat_name'];?></td>
+                        <td><a href="#"  id="<?php echo $cat_id;?>" class="btn btn-primary edit_cat" data-toggle="modal" data-target="#secondModal"><i class="fa fa-pencil"></i>Edit</a></td>
+                        <td><a href="page-itemscategory.php?del_id=<?php echo $cat_id;?>" class="btn btn-danger delete_link"><i class="fa fa-trash-o"></i>Delete</a></td>
+                      </tr> 
+                     <?php endwhile;?>
+                                      </tbody>
                           </tbody>
                           </table>
                         </div>
@@ -118,103 +108,61 @@ include 'sidebar.php';
     </div><!-- /#right-panel -->
 
     <!-- Right Panel -->
-
-
-               <div class="modal fade" id="mediumModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="mediumModalLabel">Medium Modal</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <p>
-                                 
-                          <form class="form-validate form-horizontal" method="POST" action="addstock.php" id=""> 
-                              <div class="form-group row">
-                                <label for="colFormLabel" class="col-sm-2 col-form-label">Date</label>
-                                <div class="col-sm-10">
-                                  <input type="Date" class="form-control" id="colFormLabel" name="Date" placeholder="Date" 
-                                  value="<?php echo($Date); ?>" >
-                                </div>
-                              </div>
-
-                              <div class="form-group row">
-                                <label for="colFormLabel" class="col-sm-2 col-form-label">Product Name</label>
-                                <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="colFormLabel" name="Productname"  value="<?php echo($Productname); ?>" placeholder="Product name">
-                                </div>
-                              </div>
-
-                              <div class="form-group row">
-                                <label for="colFormLabel" class="col-sm-2 col-form-label">Quantity</label>
-                                <div class="col-sm-10">
-                                  <input type="Number" class="form-control" id="colFormLabel" name="Quantity" value="<?php echo($Quantity); ?>" placeholder="Quantity">
-                                </div>
-                              </div>
-
-                              <div class="form-group row">
-                                <label for="colFormLabel" class="col-sm-2 col-form-label">Unit Price</label>
-                                <div class="col-sm-10">
-                                  <input type="Number" class="form-control" id="colFormLabel" name="Unitprice" value="<?php echo($Unitprice); ?>" placeholder="Unit Price">
-                                </div>
-                              </div>
-                              <div class="form-group row">
-                                <label for="colFormLabel" class="col-sm-2 col-form-label">Total (Buying Price)</label>
-                                <div class="col-sm-10">
-                                  <input type="Number" class="form-control" id="colFormLabel" name="Total" 
-                                  value="<?php echo($Total); ?>" placeholder="Total (Buying price)">
-                                </div>
-                              </div>
-                              
-                               <div class="form-group row">
-                                  <label for="example-time-input" class="col-2 col-form-label">Person Responsible</label>
-                                  <div class="col-10">
-                                        <select name="Person"  class="form-control" Value="<?php echo($Person);?>" required="">
-                                              
-                                                  <?php if ($row['Deputyprincipal']== "Deputyprincipal") :?>
-                                                    <option value='Deputy Principal' selected> Deputy Principal</option>
-                                                    <?php else: ?>
-                                                    <option value='Principal'>Principal</option>
-                                                    <?php endif; ?>
-
-                                                    <?php if ($row['Teacher']== "Teacher") :?>
-                                                    <option value='Teacher' selected>Teacher</option>
-                                                    <?php else: ?>
-                                                    <option value='Secretary'>Secretary</option>
-                                                    <?php endif; ?>
-                                                  </select>
-                                  </div>
-                                </div>
-
-                               
-                                <div class="form-group row">
-                                  <label for="exampleInputFile" class="col-2 col-form-label">Receipt</label>
-                                  <div class="col-10">
-                                    <input type="file" name="Receipt" class="form-control-file" value="<?php echo($Receipt); ?>" id="exampleInputFile" aria-describedby="fileHelp">
-                                    <small id="fileHelp" class="form-text text-muted">**Upload item's Receipt**</small>
-                                  </div>
-                                </div>
-
-                                  
-                              <div class="form-group row">
-                                <label for="colFormLabel" class="col-sm-2 col-form-label">Description </label>
-                                <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="colFormLabel" value="<?php echo($Description); ?>" name="Description" nplaceholder="Product description">
-                                </div>
-                              </div>
-
-                       
-  </p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                <button type="button" class="btn btn-primary">Confirm</button>
-                            </div>
+            <!-- Button trigger modal -->
+            <!-- Modal -->
+            <div class="modal fade" id="firstModal" tabindex="-1" role="dialog" aria-labelledby="firstModal" aria-hidden="true">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="firstModal">Add Category</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
+                        <div class="modal-body">
+                            <form  action="new_category.php"   method="POST"  class="form-inline justify-content-center" >
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                    <label for="title">Category:</label>
+                                    <input type="text" class="form-control" id="category" name="category">
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <input type="submit" class="btn btn-primary" name="save"  value="SAVE">
+                        </div>
+                        </form>
                     </div>
                 </div>
+            </div>
+            <!--edit modal-->
+            <div class="modal fade" id="secondModal" tabindex="-1" role="dialog" aria-labelledby="secondModal" aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="secondModal">Add Category</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form  action="update-category.php"   method="POST"  class="form-inline justify-content-center" >
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <input type="hidden" id="cid" name="id">
+                                    <label for="title">Category:</label>
+                                    <input type="text" class="form-control" id="cname" name="category">
+                                </div>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                        <input type="submit" class="btn btn-primary" name="update"  value="SAVE">
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
  <?php include 'footer.php';  ?>

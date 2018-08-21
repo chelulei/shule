@@ -29,9 +29,10 @@ if(isset($_POST['login'])) {
             elseif ($role == 'Accountant'):
                 $_SESSION['username'] = $row['username'];
                 header('location:../Accountant/index.php');
-            else:
-                $error = 'Your PassWord or UserName is not Found';
             endif;
+        }else{
+             $error = 'Your PassWord or UserName is not Found';
+
         }
 
 

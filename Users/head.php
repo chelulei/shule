@@ -21,7 +21,7 @@
      <link rel="stylesheet" href="assets/css/bootstrap-select.less">
     <link rel="stylesheet" href="assets/scss/style.css">
     <link href="assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+<!--    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>-->
  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="body">

@@ -50,7 +50,6 @@ include 'connect.php';
                         <div class="card-body">
                   <table id="bootstrap-data-table" class="table table-striped table-bordered">
 					 <thead>
-				                <th>#</th>
 								<th>Date</th>
 								<th>Student</th>
 								<th>Sickness Reported</th>
@@ -76,9 +75,6 @@ include 'connect.php';
                             $Description=$row['description'];
                             $user=$row['username'];
                             ?>
-                            <td><?php echo $counter;   $counter++; //increment counter by 1 on every pass
-                                ?>
-                                </td>
                             <td><?php echo  formatDate($Date);?> </td>
                             <td><?php echo ucwords($row['Surname'].' '.$row['Firstname'].' '.$row['Middlename'] );?> </td>
                             <td><?php echo $Report;?> </td>

@@ -38,6 +38,25 @@
             }
             return true;
         });
+
+        /*edit category*/
+        $(document).on('click', '.edit_cat', function(){
+            var c_id = $(this).attr("id");
+            $.ajax({
+                url:"fetch.php",
+                method:"POST",
+                data:{c_id:c_id},
+                dataType:"json",
+                success:function(data){
+                    console.log(data);
+                    $('#cid').val(data.cat_id);
+                    $('#cname').val(data.cat_name);
+
+                }
+            });
+        });
+        /*-----------------------------------------*/
+
      $(document).on('click', '.edit_data', function(){  
            var stud_id = $(this).attr("id");  
            $.ajax({  
@@ -125,28 +144,6 @@
                 }
             });
         });
-
-        /**/
-         $(".remove").click(function(){
-
-                    var SubIdNo = $(this).parents("tr").attr("SubIdNo");
-
-                    if(confirm('Are you sure to remove this record ?'))
-                    {
-                        $.ajax({
-                           url: '/delete.php',
-                           type: 'GET',
-                           data: {SubIdNo: SubIdNo},
-                           error: function() {
-                              alert('Something is wrong');
-                           },
-                           success: function(data) {
-                                $("#"+SubIdNo).remove();
-                                alert("Record removed successfully");
-                           }
-                        });
-                    }
-                });
 
 
           $('#bootstrap-data-table-export').DataTable();
