@@ -263,4 +263,4 @@ if (isset($_GET['edit'])) {
 </div><!-- .content -->
 </div><!-- /#right-panel -->
 <!-- Right Panel -->
-<?php //include 'footer.php'; ?>
+<?php include 'footer.php'; ?>

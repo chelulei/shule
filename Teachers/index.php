@@ -6,9 +6,6 @@ include 'sidebar.php';
 include 'connect.php';
 ?>
         <!-- Left Panel -->
-
-   
-
     <div id="right-panel" class="right-panel">
 
         <!-- Header-->

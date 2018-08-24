@@ -16,8 +16,8 @@
 	    $Formerschool=$_POST['Formerschool'];
 	    $Entrymarks=$_POST['Entrymarks'];
 
-$sql = "INSERT INTO students (Surname,Middlename,Firstname,Dateofbirth,Gender, Class,Homeaddress,Parentname, Phone, Email,Formerschool,Entrymarks,date) 
-VALUES ('$Surname','$Middlename','$Firstname','$Dateofbirth','$Gender','$Class', '$Homeaddress','$Parentname', '$Phone', '$Email', '$Formerschool','$Entrymarks',NOW() )";
+$sql = "INSERT INTO students (Surname,Middlename,Firstname,Dateofbirth,Gender, Class,Homeaddress,Parentname, Phone, Email,Image,Formerschool,Entrymarks,date) 
+VALUES ('$Surname','$Middlename','$Firstname','$Dateofbirth','$Gender','$Class', '$Homeaddress','$Parentname', '$Phone', '$Email','default.png','$Formerschool','$Entrymarks',NOW() )";
 
         $run=$db->query($sql);
 

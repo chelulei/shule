@@ -15,17 +15,15 @@
 <!--<script src="assets/js/lib/data-table/buttons.print.min.js"></script>-->
 <!--<script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>-->
 <script src="assets/js/lib/data-table/datatables-init.js"></script>
-
     <script>
-        var $ = jQuery;
-    $(document).ready(function() {
-        //Remove alert
+        jQuery( document ).ready(function( $ ) {
+            //Remove alert
  window.setTimeout(function() {
                 $(".alert").fadeTo(500, 0).slideUp(500, function(){
                     $(this).remove();
                 });
             }, 4000);
-    //clear URL     
+    //clear URL
     if(typeof window.history.pushState == 'function') {
         window.history.pushState({}, "Hide", '<?php echo $_SERVER['PHP_SELF'];?>');
     }
@@ -147,16 +145,8 @@
 
 
           $('#bootstrap-data-table-export').DataTable();
-
-           /* jQuery(".standardSelect").chosen({
-                disable_search_threshold: 10,
-                no_results_textt: "Oops, nothing found!",
-                width: "100%"
-            });*/
-
-
+            //If image edit link is clicked
         });
     </script>
-
 </body>
 </html>
