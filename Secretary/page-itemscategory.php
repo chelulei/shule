@@ -1,8 +1,12 @@
-
-<?php 
+<?php
+error_reporting(0);
+include 'connect.php';
+include 'functions.php';
+getUser();
 include 'head.php';
 include 'sidebar.php';
-include 'connect.php';
+
+
 if (isset($_GET['del_id'])) {
 
     $delete = "DELETE FROM categories WHERE cat_id='$_GET[del_id]'";
@@ -10,7 +14,7 @@ if (isset($_GET['del_id'])) {
     $run_delete= mysqli_query($con,$delete);
 
     if($run_delete) {
-        header("Location:page-itemscategory.php?success=category has been deleted");
+
     }else{
         header("Location:page-itemscategory.php?error=Error!!!!!");
     }
@@ -22,7 +26,7 @@ if (isset($_GET['del_id'])) {
         <!-- Header-->
       <?php 
         
-       include '../header.php';
+       include 'header.php';
         ?>
       <!-- /header -->
         <!-- Header-->

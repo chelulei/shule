@@ -1,5 +1,9 @@
 
-<?php 
+<?php
+error_reporting(0);
+include 'connect.php';
+include 'functions.php';
+getUser();
 include 'head.php';
 include 'sidebar.php';
 ?>
@@ -8,7 +12,7 @@ include 'sidebar.php';
         <!-- Header-->
       <?php 
         
-       include '../header.php';
+       include 'header.php';
         ?>
       <!-- /header -->
         <!-- Header-->

@@ -1,20 +1,25 @@
 
 <?php
+error_reporting(0);
 include 'head.php';
 include 'sidebar.php';
-require('../connect.php');
-include '../connect.php';
+require('connect.php');
+include 'connect.php';
 include 'count.php';
+include 'functions.php';
+getUser();
 if(isset($_GET['id'])):
     $id=$_GET['id'];
 endif;
+
+
 ?>
 <!-- Left Panel -->
 
 <div id="right-panel" class="right-panel">
 
     <!-- Header-->
-    <?php include '../header.php'; ?>
+    <?php include 'header.php'; ?>
     <!-- /header -->
     <!-- Header-->
 
@@ -39,24 +44,58 @@ endif;
 
     <div class="content mt-3">
         <!-- /. -->
-        <table class="table table-hover table-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-m-3">
+                   <div class="profile"></div>
+                    <?php
+                    $result = "SELECT * FROM students  WHERE adm_No='$id'";
+                    $run=mysqli_query($con,$result);
+                    //start of loop for displaying products
+                    $row = mysqli_fetch_array($run);
+                    $image= $row['Image']
+                    ?>
+                    <img src="images/avatar/<?php echo $image;?>"
+                        width="80" height="80" class="rounded-circle" alt="profile"
+                         onerror="this.style.display='none'"/>
+                </div>
+                <!-- /.col-m-3 -->
+        </div>
+        <!-- /.container -->
+        </div>
+        <br>
+        <!-- /.row -->
+        <table class="table table-hover">
+            <!-- /.row -->
             <thead>
+            <!-- /.row -->
             <tr>
+                <th></th>
                 <th scope="col">SUBJECT</th>
                 <th scope="col">TEST</th>
                 <th scope="col">EXAM</th>
-                <th scope="col">AVERAGE</th>
-                <th scope="col">TEACHER</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td>ENG</td>
-                <td>50</td>
-                <td>80</td>
-                <td>44.2</td>
-                <td>JOSKEN</td>
-            </tr>
+              <?php
+        $result = "SELECT * FROM grade  WHERE student='$id'";
+
+                $run=mysqli_query($con,$result);
+                //start of loop for displaying products
+                while($row = mysqli_fetch_array($run)):
+                  $subject=$row['subject'];
+                  $exam = $row['exam'];
+                  $score=$row['score'];?>
+                <tr>
+                <td></td>
+                <td><?php echo $subject;?></td>
+                <td><?php echo $exam;?></td>
+                <td><?php echo $score;?></td>
+              </tr>
+            <?php endwhile;?>
+            <tr><td>TOTAL</td><td>1</td><td>2</td><td>3</td></tr>
+            <tr><td>AVERAGE</td><td><td><td></td></td></td><td></td></tr>
             </tbody>
         </table>
     </div> <!-- .content -->

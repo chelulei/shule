@@ -13,7 +13,7 @@ if(isset($_GET['delete']))
     $query= mysqli_query($con, "DELETE FROM items WHERE itemsIdno=".$id);
 
     if( $query):
-        header("Location:page-items.php?success=Successfully deleted");
+        header("Location:page-items.php");
     else:
         header("Location:page-items.php?success=Error!!!!!");
     endif;

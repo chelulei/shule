@@ -1,6 +1,10 @@
 
 <?php include 'head.php';
+error_reporting(0);
 include 'connect.php';
+include 'functions.php';
+getUser();
+include 'head.php'
 ?>
         <!-- Left Panel -->
    <!-- /#left-panel -->
@@ -9,7 +13,7 @@ include 'connect.php';
     <!-- Right Panel -->
     <div id="right-panel" class="right-panel">
        <!-- Header-->
-        <?php include '../header.php';  ?>
+        <?php include 'header.php';  ?>
       <!-- /header -->
         <!-- Header-->
         <div class="breadcrumbs">
@@ -53,9 +57,7 @@ include 'connect.php';
                       </tr>
                     </thead>
                     <tbody>
-                      <?php 
-
-                        $counter = 1;
+                      <?php
                                 $result = "SELECT * FROM students";
                                 $select=mysqli_query($con,$result);
                                     
@@ -69,10 +71,8 @@ include 'connect.php';
                                         $Class=$row['Class'];
                                         $Parentname=$row['Parentname'];
                                         $Phone=$row['Phone'];
-
-                            echo '<tr>';
-                                       
                                 ?>
+                             <tr>
                                     <td><?php echo  $adm_No;?></td>
                                     <td><?php echo ucwords($Surname .' '. $Firstname.' '.$Middlename );?> </td>
                                     <td><?php echo ucwords($Class);?></td>
@@ -87,10 +87,8 @@ include 'connect.php';
                               </div>
 
                         </td>
-                           <?php endwhile; 
-
-                      echo '</tr>'
-                    ?>
+                             </tr>
+                           <?php endwhile; ?>
 
                     </tbody>
                   </table>

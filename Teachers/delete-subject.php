@@ -13,7 +13,7 @@ if(isset($_GET['delete']))
     $query= mysqli_query($con, "DELETE FROM subject WHERE SubIdNo=".$id);
 
     if( $query):
-        header("Location:page-subjects.php?success=Subject successfully added");
+        header("Location:page-subjects.php");
     else:
         header("Location:page-subjects.php?error=Error!!!!!");
     endif;

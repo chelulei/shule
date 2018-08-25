@@ -73,7 +73,6 @@ if (isset($_GET['sus'])) {
                     </thead>
                     <tbody>
                       <?php
-                        $counter = 1;
                       $result = "SELECT * FROM students t JOIN class c ON(t.Class=c.classId) WHERE c.Classteacher='$user_id'";
 
                                 $run=mysqli_query($con,$result);
@@ -87,12 +86,8 @@ if (isset($_GET['sus'])) {
                                         $Class=$row['Class'];
                                         $sus=$row['Suspension'];
 
-                            echo '<tr>';
-
-                                ?>
-                                    <td><?php echo $counter;
-                                       $counter++; //increment counter by 1 on every pass
-                                              ?></td>
+                                        ?>
+                                    <tr>
                                     <td><?php echo $row['adm_No'];?></td>
                                     <td><?php echo ucwords($row['Surname'].' '.$row['Firstname'].' '.$row['Middlename'] );?> </td>
                                     <td><?php echo ucwords($row['Class']);?></td>
@@ -110,11 +105,9 @@ if (isset($_GET['sus'])) {
                                   <?php endif ?>
                               </div>
                         </td>
+                                    </tr>
+                           <?php endwhile;?>
 
-                           <?php endwhile;
-
-                      echo '</tr>'
-                    ?>
 
                     </tbody>
                   </table>

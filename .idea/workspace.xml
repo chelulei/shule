@@ -2,21 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa46fc39-0277-40fb-8c0d-c0bc82776dc2" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Secretary/assets/css/profile.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Secretary/page-academic.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Secretary/page-medical.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Secretary/page-studentfee.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Secretary/upload.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Secretary/assets/css/image.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Secretary/delete_files.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Secretary/image-teach.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Secretary/image.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Secretary/page-teacherprofile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Secretary/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Secretary/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Secretary/delete-item.php" beforeDir="false" afterPath="$PROJECT_DIR$/Secretary/delete-item.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Secretary/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Secretary/footer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Secretary/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/Secretary/head.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Secretary/images/default.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Secretary/images/profile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Secretary/newstudent.php" beforeDir="false" afterPath="$PROJECT_DIR$/Secretary/newstudent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Secretary/page-editstudents.php" beforeDir="false" afterPath="$PROJECT_DIR$/Secretary/page-editstudents.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Secretary/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/Secretary/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Secretary/images/avatar/1534847352_Screenshot (10).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Secretary/images/avatar/1534847370_Screenshot (11).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Secretary/images/avatar/1534847428_cosmas.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Secretary/images/avatar/1534847508_cosmas.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Secretary/images/avatar/1534847816_20171102_134031.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Secretary/images/avatar/1534848020_cosmas.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Secretary/images/avatar/1534848527_20171102_134023.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Secretary/images/avatar/1534848867_20171102_134048.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Secretary/images/avatar/1534849007_cosmas.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Secretary/images/avatar/1534849239_cosmas.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Secretary/newteacher.php" beforeDir="false" afterPath="$PROJECT_DIR$/Secretary/newteacher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Secretary/page-academic.php" beforeDir="false" afterPath="$PROJECT_DIR$/Secretary/page-academic.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Secretary/page-inventory.php" beforeDir="false" afterPath="$PROJECT_DIR$/Secretary/page-inventory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Secretary/page-itemscategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/Secretary/page-itemscategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Secretary/page-newstudents.php" beforeDir="false" afterPath="$PROJECT_DIR$/Secretary/page-newstudents.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Secretary/page-newteachers.php" beforeDir="false" afterPath="$PROJECT_DIR$/Secretary/page-newteachers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Secretary/page-students.php" beforeDir="false" afterPath="$PROJECT_DIR$/Secretary/page-students.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Secretary/page-studentsprofile.php" beforeDir="false" afterPath="$PROJECT_DIR$/Secretary/page-studentsprofile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Secretary/test.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teachers/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Teachers/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Secretary/page-teachers.php" beforeDir="false" afterPath="$PROJECT_DIR$/Secretary/page-teachers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Secretary/upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/Secretary/upload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teachers/delete-subject.php" beforeDir="false" afterPath="$PROJECT_DIR$/Teachers/delete-subject.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teachers/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Teachers/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teachers/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/Teachers/head.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Teachers/page-students.php" beforeDir="false" afterPath="$PROJECT_DIR$/Teachers/page-students.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,39 +46,30 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="page-medical.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Secretary/page-medical.php">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="page-itemscategory.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Secretary/page-itemscategory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="9" column="6" lean-forward="true" selection-start-line="7" selection-end-line="9" selection-end-column="6" />
+            <state relative-caret-position="336">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page-academic.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Secretary/page-academic.php">
+      <file leaf-file-name="page-inventory.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Secretary/page-inventory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="44" column="34" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
+            <state relative-caret-position="72">
+              <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page-studentsprofile.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Secretary/page-studentsprofile.php">
+      <file leaf-file-name="page-newstudents.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Secretary/page-newstudents.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="108" column="57" selection-start-line="108" selection-start-column="57" selection-end-line="108" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page-studentfee.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Secretary/page-studentfee.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+            <state relative-caret-position="21">
+              <caret line="1" selection-start-line="1" selection-end-line="8" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -74,7 +85,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Clas</find>
       <find>End_dates</find>
       <find>End_date</find>
       <find>plac_id</find>
@@ -92,7 +102,6 @@
       <find>End</find>
       <find>Audience</find>
       <find>aggregate</find>
-      <find>&lt;</find>
       <find>err</find>
       <find>Homeaddress</find>
       <find>Position</find>
@@ -104,6 +113,8 @@
       <find>$_POST</find>
       <find>subject</find>
       <find>score</find>
+      <find>&lt;</find>
+      <find>r</find>
     </findStrings>
     <replaceStrings>
       <replace>Createdby</replace>
@@ -144,27 +155,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Manager/page-parents.php" />
-        <option value="$PROJECT_DIR$/Manager/page-exams.php" />
-        <option value="$PROJECT_DIR$/Users/index.php" />
-        <option value="$PROJECT_DIR$/Manager/page-medical.php" />
-        <option value="$PROJECT_DIR$/Manager/page-teachers.php" />
-        <option value="$PROJECT_DIR$/Manager/page-itemscategory.php" />
-        <option value="$PROJECT_DIR$/Secretary/new_category.php" />
-        <option value="$PROJECT_DIR$/Secretary/update-category.php" />
-        <option value="$PROJECT_DIR$/Secretary/page-itemscategory.php" />
-        <option value="$PROJECT_DIR$/Secretary/fetch.php" />
-        <option value="$PROJECT_DIR$/head.php" />
-        <option value="$PROJECT_DIR$/Teachers/head.php" />
-        <option value="$PROJECT_DIR$/Manager/head.php" />
-        <option value="$PROJECT_DIR$/Users/head.php" />
-        <option value="$PROJECT_DIR$/Accountant/page-login.php" />
-        <option value="$PROJECT_DIR$/Accountant/side.php" />
-        <option value="$PROJECT_DIR$/footer.php" />
-        <option value="$PROJECT_DIR$/Accountant/header.php" />
-        <option value="$PROJECT_DIR$/Accountant/index.php" />
-        <option value="$PROJECT_DIR$/Accountant/page-feestucture.php" />
-        <option value="$PROJECT_DIR$/Accountant/page-register.php" />
         <option value="$PROJECT_DIR$/Accountant/connect.php" />
         <option value="$PROJECT_DIR$/Accountant/errors.php" />
         <option value="$PROJECT_DIR$/Accountant/session.php" />
@@ -175,7 +165,6 @@
         <option value="$PROJECT_DIR$/Accountant/sidebar.php" />
         <option value="$PROJECT_DIR$/Teachers/update-grade.php" />
         <option value="$PROJECT_DIR$/Accountant/delete-fees.php" />
-        <option value="$PROJECT_DIR$/Teachers/footer.php" />
         <option value="$PROJECT_DIR$/Accountant/head.php" />
         <option value="$PROJECT_DIR$/Accountant/footer.php" />
         <option value="$PROJECT_DIR$/Accountant/page-editfees.php" />
@@ -186,15 +175,37 @@
         <option value="$PROJECT_DIR$/Teachers/index.php" />
         <option value="$PROJECT_DIR$/Secretary/newstudent.php" />
         <option value="$PROJECT_DIR$/Secretary/assets/css/profile.css" />
-        <option value="$PROJECT_DIR$/Secretary/head.php" />
         <option value="$PROJECT_DIR$/Secretary/script.js" />
+        <option value="$PROJECT_DIR$/Secretary/page-medical.php" />
+        <option value="$PROJECT_DIR$/Secretary/page-studentfee.php" />
+        <option value="$PROJECT_DIR$/Secretary/page-items.php" />
+        <option value="$PROJECT_DIR$/Secretary/delete_files.php" />
+        <option value="$PROJECT_DIR$/Secretary/delete-item.php" />
+        <option value="$PROJECT_DIR$/Teachers/footer.php" />
+        <option value="$PROJECT_DIR$/Teachers/head.php" />
+        <option value="$PROJECT_DIR$/Teachers/delete-subject.php" />
+        <option value="$PROJECT_DIR$/Teachers/page-students.php" />
+        <option value="$PROJECT_DIR$/Secretary/newteacher.php" />
+        <option value="$PROJECT_DIR$/Secretary/header.php" />
+        <option value="$PROJECT_DIR$/Secretary/assets/css/style.css" />
+        <option value="$PROJECT_DIR$/assets/css/style.css" />
+        <option value="$PROJECT_DIR$/Secretary/page-academic.php" />
+        <option value="$PROJECT_DIR$/Secretary/assets/css/image.css" />
+        <option value="$PROJECT_DIR$/Secretary/head.php" />
+        <option value="$PROJECT_DIR$/Secretary/image.scripts.php" />
         <option value="$PROJECT_DIR$/Secretary/image.js" />
         <option value="$PROJECT_DIR$/Secretary/footer.php" />
         <option value="$PROJECT_DIR$/Secretary/upload.php" />
-        <option value="$PROJECT_DIR$/Secretary/page-medical.php" />
+        <option value="$PROJECT_DIR$/Secretary/image.php" />
+        <option value="$PROJECT_DIR$/Secretary/image-teach.php" />
+        <option value="$PROJECT_DIR$/Secretary/page-teacherprofile.php" />
         <option value="$PROJECT_DIR$/Secretary/page-studentsprofile.php" />
-        <option value="$PROJECT_DIR$/Secretary/page-studentfee.php" />
-        <option value="$PROJECT_DIR$/Secretary/page-academic.php" />
+        <option value="$PROJECT_DIR$/Secretary/page-newstudents.php" />
+        <option value="$PROJECT_DIR$/Secretary/page-students.php" />
+        <option value="$PROJECT_DIR$/Secretary/page-newteachers.php" />
+        <option value="$PROJECT_DIR$/Secretary/page-teachers.php" />
+        <option value="$PROJECT_DIR$/Secretary/page-itemscategory.php" />
+        <option value="$PROJECT_DIR$/Secretary/page-inventory.php" />
       </list>
     </option>
   </component>
@@ -205,8 +216,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1414" />
-    <option name="y" value="22" />
+    <option name="x" value="1393" />
+    <option name="y" value="50" />
     <option name="width" value="1376" />
     <option name="height" value="734" />
   </component>
@@ -245,9 +256,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\shule\Secretary" />
       <recent name="C:\xampp\htdocs\shule\Accountant" />
       <recent name="C:\xampp\htdocs\shule\Manager" />
-      <recent name="C:\xampp\htdocs\shule\Secretary" />
       <recent name="C:\xampp\htdocs\shule\Teachers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -344,32 +355,36 @@
       <workItem from="1534765442425" duration="12264000" />
       <workItem from="1534805278670" duration="20851000" />
       <workItem from="1534834096256" duration="19162000" />
+      <workItem from="1535116241228" duration="10556000" />
+      <workItem from="1535145199960" duration="16716000" />
+      <workItem from="1535163516026" duration="21000" />
+      <workItem from="1535163600488" duration="9345000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="422383000" />
+    <option name="totallyTimeSpent" value="459021000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1376" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="2" weight="0.10258359" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.23176292" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32928678" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.5487013" />
@@ -414,63 +429,16 @@
           <line>8</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/Secretary/page-teachers.php</url>
+          <line>96</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Secretary/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1008" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Teachers/page-addsubject.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Secretary/newsubject.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Secretary/page-teachers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="108" column="22" lean-forward="true" selection-start-line="108" selection-start-column="22" selection-end-line="108" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Accountant/sidebar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="27" column="94" selection-start-line="27" selection-start-column="94" selection-end-line="27" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Teachers/page-addgrades.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-131">
-          <caret line="70" column="40" selection-start-line="68" selection-start-column="31" selection-end-line="73" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Teachers/page-editgrades.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="80" column="56" selection-start-line="80" selection-start-column="56" selection-end-line="80" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Teachers/page-editstudents.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3591" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Teachers/update-grade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="611">
@@ -482,13 +450,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="8" column="30" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="8" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Secretary/page-itemscategory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" lean-forward="true" selection-start-line="5" selection-end-line="17" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -555,24 +516,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Teachers/session.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Users/register.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Users/head.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="23" column="71" selection-start-line="23" selection-start-column="71" selection-end-line="23" selection-end-column="71" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Users/logout.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Users/moderator.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Users/index.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -581,37 +530,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Users/footer.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Teachers/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-441">
           <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Users/errors.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Secretary/images/avatar/3.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Secretary/images/avatar/2.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Secretary/images/avatar/1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Secretary/assets/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1197" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Secretary/head.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="26" column="44" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -622,56 +544,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Teachers/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1260">
-          <caret line="24" column="3" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Secretary/images/flags/1x1/gt.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Secretary/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="38" column="3" selection-start-line="38" selection-start-column="3" selection-end-line="38" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Secretary/image.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="43" column="3" selection-start-line="43" selection-start-column="3" selection-end-line="43" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Secretary/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="67" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Secretary/upload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-78">
-          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Secretary/script.js" />
+    <entry file="file://$PROJECT_DIR$/Secretary/image.js" />
     <entry file="file://$PROJECT_DIR$/Secretary/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="172" column="10" selection-end-line="210" selection-end-column="33" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Secretary/modal-edit.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Secretary/page-students.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Secretary/newstudent.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -680,39 +560,219 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Secretary/page-items.php">
+    <entry file="file://$PROJECT_DIR$/Secretary/page-studentfee.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-315" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Secretary/page-register.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Secretary/page-medical.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="9" column="6" lean-forward="true" selection-start-line="7" selection-end-line="9" selection-end-column="6" />
+        <state relative-caret-position="189">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Secretary/page-studentfee.php">
+    <entry file="file://$PROJECT_DIR$/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        <state relative-caret-position="630">
+          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Secretary/page-items.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2079">
+          <caret line="99" column="46" selection-start-line="99" selection-start-column="46" selection-end-line="99" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Secretary/delete-item.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Secretary/delete_files.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Teachers/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="41" lean-forward="true" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Teachers/newevents.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-82" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Teachers/head.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="30" column="64" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Teachers/delete-subject.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="45" lean-forward="true" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Teachers/page-students.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="86" column="64" lean-forward="true" selection-start-line="75" selection-start-column="22" selection-end-line="86" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Secretary/page-medical.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="6" selection-start-line="7" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Secretary/newteacher.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Secretary/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="604" lean-forward="true" selection-start-line="604" selection-end-line="604" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Secretary/assets/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="604" selection-start-line="604" selection-end-line="604" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Secretary/assets/css/image.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1134">
+          <caret line="54" column="1" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Secretary/image.js" />
+    <entry file="file://$PROJECT_DIR$/Secretary/page-academic.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-442">
+          <caret line="10" selection-start-line="10" selection-end-line="12" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Secretary/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Secretary/head.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="27" column="44" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Secretary/image.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="35" lean-forward="true" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Secretary/image-teach.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Secretary/upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Secretary/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="76" column="6" lean-forward="true" selection-start-line="76" selection-start-column="6" selection-end-line="76" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Secretary/page-teacherprofile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" selection-start-line="1" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Secretary/page-students.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Secretary/page-studentsprofile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="108" column="57" selection-start-line="108" selection-start-column="57" selection-end-line="108" selection-end-column="57" />
+        <state relative-caret-position="21">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="5" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Secretary/page-academic.php">
+    <entry file="file://$PROJECT_DIR$/Secretary/page-newteachers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="44" column="34" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
+        <state relative-caret-position="21">
+          <caret line="1" selection-start-line="1" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Secretary/page-teachers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Secretary/page-itemscategory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Secretary/page-newstudents.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" selection-start-line="1" selection-end-line="8" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Secretary/page-inventory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
         </state>
       </provider>
     </entry>

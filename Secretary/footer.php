@@ -3,8 +3,8 @@
 <script src="assets/js/lib/data-table/jquery.dataTables.min.js"></script>
 <script src="assets/js/lib/data-table/dataTables.bootstrap4.min.js"></script>
 <script src="assets/js/popper.min.js"></script>
+<script src="assets/js/sweetalert.min.js"></script>
 <script src="assets/js/plugins.js"></script>
-<script src="assets/js/main.js"></script>
 
 <!--<script src="assets/js/lib/data-table/dataTables.buttons.min.js"></script>-->
 <!--<script src="assets/js/lib/data-table/buttons.bootstrap.min.js"></script>-->
@@ -17,6 +17,10 @@
 <script src="assets/js/lib/data-table/datatables-init.js"></script>
     <script>
         jQuery( document ).ready(function( $ ) {
+            /*hide empty image*/
+            $('img').on('error', function () {
+                $(this).remove();
+            })
             //Remove alert
  window.setTimeout(function() {
                 $(".alert").fadeTo(500, 0).slideUp(500, function(){
@@ -29,13 +33,39 @@
     }
      /* edit students  */
 
-        $(".delete_link").click(function(e){
-            if(!confirm('Are you sure you want to delete this data?')){
+            $('.delete_link').click(function(e){
                 e.preventDefault();
-                return false;
-            }
-            return true;
-        });
+                var link = $(this).attr('href');
+                swal({
+                        title: 'Are you sure?',
+                        text: 'You will not be able to recover this data!',
+                        type: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Yes, delete it!',
+                        cancelButtonText: 'No, cancel!',
+                        closeOnConfirm: false,
+                        closeOnCancel: false
+                    },
+                    function(isConfirm) {
+                        if (isConfirm) {
+                            swal(
+                                'Deleted!',
+                                'Your data has been deleted.',
+                                'success'
+                            );
+                            window.location=link
+                        } else {
+                            swal(
+                                'Cancelled',
+                                'Your data  is safe :)',
+                                'error'
+                            );
+                        }
+                    });
+
+            })
 
         /*edit category*/
         $(document).on('click', '.edit_cat', function(){
@@ -143,10 +173,12 @@
             });
         });
 
-
           $('#bootstrap-data-table-export').DataTable();
-            //If image edit link is clicked
+
+            /*end of jquery*/
         });
+
+
     </script>
 </body>
 </html>
