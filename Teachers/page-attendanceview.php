@@ -88,7 +88,7 @@ getUser()
                                         <td><?php echo ucwords($Class);?> </td>
                                         <td><?php echo ucwords($row['Surname'].' '.$row['Firstname'].' '.$row['Middlename']);?></td>
                                         <td><?php echo $day;?> </td>
-                                        <td><?php echo $date;?> </td>
+                                        <td><?php echo formatDate($date);?> </td>
                                         <td><?php echo $status;?> </td>
                                     </tr>
                                 <?php endwhile; ?>

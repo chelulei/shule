@@ -22,7 +22,7 @@ if (isset($_GET['update'])) {
     $term=$row['term'];
     $subject=$row['subject'];
     $exam=$row['exam'];
-    $score=$row['score'];
+    $score=$row['test'];
 
 }
 ?>
@@ -31,7 +31,7 @@ if (isset($_GET['update'])) {
         <!-- Header-->
       <?php 
         
-       include '../header.php';
+       include 'header.php';
         ?>
       <!-- /header -->
         <!-- Header-->
@@ -161,7 +161,7 @@ if (isset($_GET['update'])) {
                                 <div class="form-group row">
                                     <label for="inputEmail3" class="col-sm-2 control-label">Score</label>
                                     <div class="col-sm-4">
-                                        <input type="number" name="score"  class="form-control" value="<?php echo $score;?>">
+                                        <input type="number" name="test"  class="form-control" value="<?php echo $score;?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">

@@ -64,7 +64,6 @@ if (isset($_GET['sus'])) {
                   <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                     <thead>
                       <tr>
-                         <th>#</th>
                         <th>Admin No.</th>
                         <th>Full Name</th>
                          <th>Class</th>
@@ -91,10 +90,9 @@ if (isset($_GET['sus'])) {
                                     <td><?php echo $row['adm_No'];?></td>
                                     <td><?php echo ucwords($row['Surname'].' '.$row['Firstname'].' '.$row['Middlename'] );?> </td>
                                     <td><?php echo ucwords($row['Class']);?></td>
-
-                          <td>
+                                        <td>
                               <div class="btn-group">
-                                  <a href="page-editstudents.php?edit=<?php echo  $adm_No; ?>"  class="btn btn-outline-danger">
+                                  <a href="page-editstudents.php?edit=<?php echo  $adm_No; ?>"  class="btn btn-outline-primary mr-1">
                                       <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</a>
                                   <?php if($sus == 'suspend' || $sus == ''): ?>
                                       <a href="page-students.php?sus=<?php echo  $adm_No; ?>"  class="btn btn-outline-danger">

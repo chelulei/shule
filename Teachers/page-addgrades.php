@@ -28,16 +28,14 @@ getUser();
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                             <li><a href="Page-newgradingsystem.php" class="btn btn-info"><i class="fa fa-plus"></i> Add New grading</a></li>
-                            <li><a href="page-grading.php" class="btn btn-info"><i class="fa fa-list"></i> List All</a></li>
-                            <!-- <li> <a href="page-itemscategory.php" class="btn btn-info"><i class="fa-gear(alias)"></i>Items Category</a> </li> -->
-                           
+                             <li><a href="page-grades.php" class="btn btn-info"><i class="fa fa-arrow-left"></i>BACK</a></li>
                         </ol>
                     </div>
                 </div>
             </div>
         </div>
          <div class="content mt-3">
+    <?php include 'errors.php';?>
             <div class="animated fadeIn">
                 <div class="row">
                 <div class="col-md-12">
@@ -109,9 +107,9 @@ getUser();
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">Score</label>
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Test</label>
                                     <div class="col-sm-4">
-                                        <input type="number" name="score"  class="form-control">
+                                        <input type="number" name="test"  class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group row">

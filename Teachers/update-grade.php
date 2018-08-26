@@ -10,7 +10,7 @@ if (isset($_POST['update'])) {
     $term=$_POST['term'];
     $subject=$_POST['subject'];
     $exam=$_POST['exam'];
-    $score=$_POST['score'];
+    $score=$_POST['test'];
    $update  = "UPDATE grade SET 
                      user='$user',
                      student='$student',
@@ -18,7 +18,7 @@ if (isset($_POST['update'])) {
                      term='$term',
                      subject='$subject',
                      exam='$exam',
-                      score='$score'
+                      test='$score'
                   WHERE gradeid='$id'";
 
     $run=mysqli_query($con,$update);

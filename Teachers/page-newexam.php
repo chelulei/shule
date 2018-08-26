@@ -59,7 +59,7 @@ getUser();
                                     <label for="inputEmail3" class="col-sm-2 control-label">Select Term 1</label>
                                     <div class="col-sm-4">
                                         <select name="term"  class="form-control" required="">
-                                            <option value=""></option>
+                                            <option value="">----Select Term----</option>
                                             <option value="Term1">Term 1</option>
                                             <option value="Term2">Term 2</option>
                                             <option value="Term3">Term 3</option>

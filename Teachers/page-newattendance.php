@@ -29,14 +29,11 @@ endif;
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <!-- <li><a href="Page-addclasses.php" class="btn btn-info"><i class="fa fa-plus"></i> Add Class</a></li> -->
                            <li>
                                <a href="page-attendancelist.php" class="btn btn-danger">
                                 <i class="fa fa-arrow-left" aria-hidden="true"></i>
                                 Cancel
-
                             </a></li>
-                            <li> <a href="page-viewclass.php" class="btn btn-info"><i class="fa fa-eye"></i> View Attendance </a> </li>
                            
                         </ol>
                     </div>

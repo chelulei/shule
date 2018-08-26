@@ -70,7 +70,7 @@ include 'connect.php';
                                     <label class=" form-control-label">Type</label>
                                     <div class="input-group">
                                            <select name="Type"  class="form-control" required="">
-                                            <option value=""></option>
+                                               <option value="">----Select Type---</option>
                                             <option value="Elective Subject">Elective Subject</option>
                                             <option value="General Subject">General Subject</option>
 
@@ -119,7 +119,7 @@ include 'connect.php';
                                     <div class="input-group">
                                         <!-- <div class="input-group-addon"><i class="fa fa-asterisk"></i></div> -->
                                             <select name="Term"  class="form-control" required="">
-                                                <option value=""></option>
+                                                <option value="">----Select Term---</option>
                                                 <option value="Term 1">Term 1</option>
                                                 <option value="Term 2">Term 2</option>
                                                 <option value="Term 3">Term 3</option>

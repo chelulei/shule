@@ -9,10 +9,10 @@
         $term=$_POST['term'];
         $subject=$_POST['subject'];
         $exam=$_POST['exam'];
-        $score=$_POST['score'];
+        $test=$_POST['test'];
 
-$sql = "INSERT INTO grade (user,student,year, term,subject,exam,score) 
-    VALUES ('$user','$student', '$year', '$term','$subject','$exam','$score')";
+$sql = "INSERT INTO grade (user,student,year, term,subject,exam,test) 
+    VALUES ('$user','$student', '$year', '$term','$subject','$exam','$test')";
 
         $run= mysqli_query($con,$sql);
 
@@ -22,7 +22,7 @@ $sql = "INSERT INTO grade (user,student,year, term,subject,exam,score)
         }
 
         else {
-            header("Location:page-addgrades.php.php?error=Error!!!!!");
+            header("Location:page-addgrades.php?error=Error!!!!!");
         }
 	}
 ?>

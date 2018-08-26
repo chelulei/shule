@@ -28,10 +28,12 @@ getUser();
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                             <li><a href="page-addgrades.php" class="btn btn-info"><i class="fa fa-plus"></i> Add New grades</a></li>
-                            <li><a href="page-grading.php" class="btn btn-info"><i class="fa fa-list"></i> List All</a></li>
-                            <!-- <li> <a href="page-itemscategory.php" class="btn btn-info"><i class="fa-gear(alias)"></i>Items Category</a> </li> -->
-                           
+                             <li><a href="page-addgrades.php" class="btn btn-primary mr-1"><i class="fa fa-plus"></i> Add New grades</a></li>
+                               <li>
+                                   <a class="btn btn-info" href="page-reports.php" role="button"> <i class="fa fa-search" aria-hidden="true">
+                                       </i>VIEW REPORTS
+                                   </a>
+                               </li>
                         </ol>
                     </div>
                 </div>
@@ -47,6 +49,7 @@ getUser();
                             <strong class="card-title">Display name of the class gradings</strong>
                         </div>
                         <div class="card-body">
+
                             <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                 <thead>
                                 <tr>
@@ -57,14 +60,14 @@ getUser();
                                     <th>Exam</th>
                                     <th>Score</th>
                                     <th>Actions</th>
+                                </tr>
                                 </thead>
                                 <tbody>
-
                                 <?php
                                 //set counter variable
                                 $counter = 1;
 
-                                $result =mysqli_query($con, "SELECT * FROM grade g JOIN students s ON(g.student=s.	adm_No)
+                                $result =mysqli_query($con, "SELECT * FROM grade g JOIN students s ON(g.student=s.adm_No)
                                     JOIN subject su ON(g.subject=su.SubIdNo)
                                   WHERE user= '$user_id'");
                                 //start of loop for displaying products
@@ -76,7 +79,7 @@ getUser();
                                     $term=$row['term'];
                                     $subject=$row['Name'];
                                     $exam=$row['exam'];
-                                    $score=$row['score'];
+                                    $score=$row['test'];
                                     ?>
                                   <tr>
                                     <td><?php echo ucwords($row['Surname'].' '.$row['Firstname'].' '.$row['Middlename']);?></td>
@@ -86,9 +89,11 @@ getUser();
                                       <td><?php echo $exam ;?> </td>
                                       <td><?php echo $score ;?></td>
                                     <td>
-                                        <a class="btn btn-danger" href="page-editgrades.php?update=<?php echo $id;?>" role="button"> <i class="fa fa-pencil-square-o"></i>EDIT</a>
+                                        <div class="btn btn-group">
+                                        <!-- /.btn btn-group -->
+                                        <a class="btn btn-primary" href="page-editgrades.php?update=<?php echo $id;?>" role="button"> <i class="fa fa-pencil-square-o"></i>EDIT</a>
                                         <a class="btn btn-danger delete_link" href="delete-grade.php?delete=<?php echo $id;?>" role="button"> <i class="fa fa-trash-o" aria-hidden="true"></i></i>DELETE</a>
-
+                                        </div>
                                     </td>
                                      </tr>
                                 <?php endwhile;?>
