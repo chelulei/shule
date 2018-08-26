@@ -1,17 +1,20 @@
 
 <?php
+error_reporting(0);
 include 'head.php';
-include 'sidebar.php';
-require('../connect.php');
-include '../connect.php';
+include 'connect.php';
 include 'count.php';
+include 'sidebar.php';
+include 'functions.php';
+getUser();
+
 ?>
 <!-- Left Panel -->
 
 <div id="right-panel" class="right-panel">
 
     <!-- Header-->
-    <?php include '../header.php'; ?>
+    <?php include 'header.php'; ?>
     <!-- /header -->
     <!-- Header-->
 

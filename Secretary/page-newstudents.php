@@ -6,6 +6,7 @@ include 'functions.php';
 getUser();
 include 'head.php';
 include 'sidebar.php';
+include 'count.php'
 ?>
 <div id="right-panel" class="right-panel">
     <!-- Header-->

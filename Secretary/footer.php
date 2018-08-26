@@ -31,8 +31,8 @@
     if(typeof window.history.pushState == 'function') {
         window.history.pushState({}, "Hide", '<?php echo $_SERVER['PHP_SELF'];?>');
     }
-     /* edit students  */
 
+        /*Sweet Alert*/
             $('.delete_link').click(function(e){
                 e.preventDefault();
                 var link = $(this).attr('href');

@@ -1,26 +1,21 @@
 <?php
 
-
-
 function totalUsers(){
 
-	global $db;
+	global $con;
 
-	$select= "SELECT * FROM user";
-    $qry=$db->query($select);
-	$total= $qry->num_rows;
-
-    echo $total;
+    $qry=mysqli_query( $con,"SELECT * FROM user");
+    $total1=mysqli_num_rows($qry);
+    echo $total1;
 	
 }
 
 function totalStudents(){
 
-	global $db;
+	global $con;
 
-	$select= "SELECT * FROM students";
-    $qry=$db->query($select);
-    $total=$qry->num_rows;
+	$select=mysqli_query( $con,"SELECT * FROM students");
+    $total=mysqli_num_rows($select);
 
     echo $total;
 	

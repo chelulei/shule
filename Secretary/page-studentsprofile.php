@@ -96,20 +96,20 @@ include 'head.php';
                             Telephone No: <strong><?php echo $Phone; ?></strong><hr>
                             Email: <strong><?php echo  $Email; ?></strong><hr>
                         </div>
-                    <div class="col-md-12">
-                        <div class="bg-info p-2 mb-2 text-white text-center">
-                            OTHER DETAILS
-                        </div>
-                    </div>
-                        <hr>
-                        <div style="margin: 0 auto;">
-                            <div class="btn-group" role="group" aria-label="Basic example";">
-                            <a href="page-medical.php?id=<?php echo  $Id;?>"><button type="button" class="btn-outline-info btn-lg mr-1">Medical History</button></a>
-                            <a href="page-studentfee.php?id=<?php echo  $Id;?>"><button type="button" class="btn-outline-danger btn-lg btn-lg mr-1">Fees Details</button></a>
-                            <a href="page-academic.php?id=<?php echo  $Id;?>"><button type="button" class="btn-outline-success btn-lg mr-1">Academic Records</button></a>
-                        </div>
-                        </div>
-                        <!-- /.div -->
+<!--                    <div class="col-md-12">-->
+<!--                        <div class="bg-info p-2 mb-2 text-white text-center">-->
+<!--                            OTHER DETAILS-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                        <hr>-->
+<!--                        <div style="margin: 0 auto;">-->
+<!--                            <div class="btn-group" role="group" aria-label="Basic example";">-->
+<!--                            <a href="page-medical.php?id=--><?php //echo  $Id;?><!--"><button type="button" class="btn-outline-info btn-lg mr-1">Medical History</button></a>-->
+<!--                            <a href="page-studentfee.php?id=--><?php //echo  $Id;?><!--"><button type="button" class="btn-outline-danger btn-lg btn-lg mr-1">Fees Details</button></a>-->
+<!--                            <a href="page-academic.php?id=--><?php //echo  $Id;?><!--"><button type="button" class="btn-outline-success btn-lg mr-1">Academic Records</button></a>-->
+<!--                        </div>-->
+<!--                        </div>-->
+<!--                        <!-- /.div -->
 
 </div>
 </div>

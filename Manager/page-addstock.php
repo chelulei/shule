@@ -1,10 +1,10 @@
 
 <?php
+include 'connect.php';
 include 'head.php';
 include 'sidebar.php';
 
 ?>
-
     <div id="right-panel" class="right-panel">
 
         <!-- Header-->
@@ -36,11 +36,6 @@ include 'sidebar.php';
                 </div>
             </div>
           </div>
-                    
-          
-
-
-
         <div class="content mt-3">
             <div class="animated fadeIn">
 
@@ -65,6 +60,24 @@ include 'sidebar.php';
                                 <div class="col-sm-10">
                                   <input type="text" class="form-control" id="colFormLabel" name="Productname" placeholder="Product name">
                                 </div>
+                              </div>
+                              <div class="form-group row">
+                                  <label for="colFormLabel" class="col-sm-2 col-form-label">Category</label>
+                                  <div class="col-sm-10">
+                                      <select name="Class" id="Class" class="form-control">
+                                          <option>---- Category Name   ------</option>
+                                          <?php
+                                          $qry=mysqli_query($con," SELECT * FROM categories");
+
+                                          while($row=mysqli_fetch_array($qry)){
+                                              ?>
+                                              <option value="<?php echo $row['cat_id'];?>"> <?php echo $row['cat_name'];?> </option>
+                                              <?php
+                                          }
+
+                                          ?>
+                                      </select>
+                                  </div>
                               </div>
 
                               <div class="form-group row">

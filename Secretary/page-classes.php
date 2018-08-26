@@ -1,8 +1,8 @@
 <?php 
 
-include("../head.php");
+include("head.php");
 
-include '../sidebar.php';
+include 'sidebar.php';
 
 ?>
 

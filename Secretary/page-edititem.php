@@ -3,6 +3,9 @@
 error_reporting(0);
 include 'head.php';
 include 'sidebar.php';
+include 'connect.php';
+include 'functions.php';
+getUser();
 
 ?>
 
@@ -50,6 +53,7 @@ include 'sidebar.php';
                             $id = $row['itemsIdno'];
                               $Date = $row['Date'];
                                 $Productname = $row['Productname'];
+                            $Category = $row['Category'];
                                 $Quantity = $row['Quantity'];
                                 $Unitprice = $row['Unitprice'];
                                 $Total = $row['Total'];
@@ -88,7 +92,29 @@ include 'sidebar.php';
                                   <input type="text" class="form-control" id="colFormLabel" name="Productname" value="<?php echo $Productname;?>">
                                 </div>
                               </div>
+                              <div class="form-group row">
+                                  <label for="colFormLabel" class="col-sm-2 col-form-label">Category</label>
+                                  <div class="col-sm-10">
+                                      <select name="Category" id="Class" class="form-control">
+                                          <option>---- Category's Name   ------</option>
+                                          <?php
+                                          $qry=mysqli_query($con," SELECT * FROM categories");
+                                          while($rows=mysqli_fetch_array($qry)){
 
+                                              if($rows['cat_id']==$Category)
+
+                                                  $select="selected";
+                                              else
+                                                  $select="";
+                                              ?>
+                                              <option value="<?php echo $rows['cat_id'];?>" <?php echo $select ;?> >  <?php echo $rows['cat_name'];?> </option>
+                                              <?php
+                                          }
+
+                                          ?>
+                                      </select>
+                                  </div>
+                              </div>
                               <div class="form-group row">
                                 <label for="colFormLabel" class="col-sm-2 col-form-label">Quantity</label>
                                 <div class="col-sm-10">
@@ -139,10 +165,7 @@ include 'sidebar.php';
                                 <div class="form-group row">
                                   <label for="exampleInputFile" class="col-2 col-form-label">Receipt</label>
                                   <div class="col-10">
-                                      <img src="images/<?php echo  $Receipt;?>" alt="Receipt"  width="100" height="100">
-                                      <hr>
-                                    <input type="file" name="Receipt" class="form-control-file"   id="exampleInputFile" aria-describedby="fileHelp">
-                                    <small id="fileHelp" class="form-text text-muted">**Upload item's Receipt**</small>
+                                      <input type="text" class="form-control" name="Receipt" value="<?php echo $Receipt;?>">
                                   </div>
                                 </div>
 
@@ -156,6 +179,7 @@ include 'sidebar.php';
                               <br>
                               <br>
                                <div class="page-title" style=";">
+                                   <label for="exampleInputFile" class="col-2 col-form-label"></label>
                                  <input type="submit" value="Save" name ="update" class="btn btn-primary" />
                                    <a href="page-items.php"><button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button></a>
                                 </div>

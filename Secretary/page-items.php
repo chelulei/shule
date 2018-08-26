@@ -1,7 +1,8 @@
-
-<?php include 'head.php';
+<?php
 include 'connect.php';
+include 'head.php';
 include 'functions.php';
+getUser();
 ?>
         <!-- Left Panel -->
    <!-- /#left-panel -->
@@ -10,7 +11,7 @@ include 'functions.php';
     <!-- Right Panel -->
     <div id="right-panel" class="right-panel">
        <!-- Header-->
-        <?php include '../header.php';  ?>
+        <?php include 'header.php';  ?>
         <style>
             .table > tbody > tr > td {
                 vertical-align: middle;
@@ -30,7 +31,7 @@ include 'functions.php';
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="Page-addstock.php" class="btn btn-info"><i class="fa fa-plus"></i>ADD ITEM</a></li>
+                            <li><a href="Page-additems.php" class="btn btn-info"><i class="fa fa-plus"></i>ADD ITEM</a></li>
                              <li><a href="page-inventory.php" class="btn btn-info"><i class="fa fa-arrow-left"></i>BACK</a></li>
                         </ol>
                     </div>
@@ -53,6 +54,7 @@ include 'functions.php';
                                 <tr>
                                     <th>Date</th>
                                     <th>Product</th>
+                                    <th>Category</th>
                                     <th>Quantity</th>
                                     <th>Unit Price</th>
                                     <th>Total Price</th>
@@ -64,34 +66,24 @@ include 'functions.php';
                                 </tr>
                                 </thead>
                                 <tbody>
-
-
                                 <?php
-
-                                //set counter variable
-                                $counter = 1;
-
                                 include 'connect.php';
-
-                                $result = "SELECT * FROM items";
+                                $result = "SELECT * FROM items i JOIN categories c ON(i.Category=c.cat_id)";
                                 $select= mysqli_query($con,$result);
 
                                 //start of loop for displaying products
                                 while($row = mysqli_fetch_array($select)):
-
                                     $id= $row['itemsIdno'];
                                     ?>
                                 <tr>
                                     <td><?php echo  formatDate($row['Date']);?></td>
                                     <td><?php echo ucwords($row['Productname']);?> </td>
+                                    <td><?php echo ucwords($row['cat_name']);?> </td>
                                     <td><?php echo ucwords($row['Quantity']);?> </td>
                                     <td><?php echo ucwords($row['Unitprice']);?> </td>
                                     <td><?php echo ucwords($row['Total']);?></td>
                                     <td><?php echo ucwords($row['Person']);?></td>
-                                    <td>
-                                        <img src="images/<?php echo $row['Receipt'];?>" width="100" height="100">
-                                    </td>
-<!---->
+                                    <td><?php echo $row['Receipt'];?></td>
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Basic example">
                                         <a  href="page-edititem.php?edit=<?php echo $id;?>" class="btn btn-primary"><i class="fa fa-edit"></i>Edit
@@ -101,8 +93,6 @@ include 'functions.php';
                                     </td>
                                 </tr>
                                 <?php endwhile;?>
-
-
                                 </tbody>
                             </table>
                         </div>
@@ -113,6 +103,5 @@ include 'functions.php';
     </div><!-- /#right-panel -->
     <!-- Right Panel -->
 <!-- Modal -->
-
 <?php include 'footer.php'; ?>
 <?php include 'modal.php'; ?>

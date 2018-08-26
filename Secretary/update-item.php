@@ -4,15 +4,16 @@ if (isset($_POST['update'])) {
 
     $Id=$_POST['id'];
     $Productname = $_POST['Productname'];
+    $Category = $_POST['Category'];
     $Quantity = $_POST['Quantity'];
     $Unitprice = $_POST['Unitprice'];
     $Total = $Quantity * $Unitprice ;
     $Person = $_POST['Person'];
     $Description = $_POST['Description'];
-    $Receipt=$_FILES['Receipt']['name'];
-    $image_tmp=$_FILES['Receipt']['tmp_name'];
-    move_uploaded_file($image_tmp,"images/$Receipt");
-    $sql = "UPDATE items SET Productname='$Productname',Quantity='$Quantity',Total='$Total',
+    $Receipt=$_POST['Receipt'];
+
+
+    $sql = "UPDATE items SET Productname='$Productname',Category='$Category',Quantity='$Quantity',Total='$Total',
         Person='$Person',Receipt='$Receipt',Description='$Description'
         WHERE 	itemsIdno = '$Id'";
 

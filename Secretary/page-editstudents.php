@@ -1,8 +1,11 @@
-
 <?php
 error_reporting(0);
 include 'connect.php';
+include 'functions.php';
+getUser();
 include 'head.php';
+
+
 include 'sidebar.php';
 if (isset($_GET['edit'])) {
 
@@ -33,7 +36,7 @@ if (isset($_GET['edit'])) {
 <div id="right-panel" class="right-panel">
     <!-- Header-->
     <?php
-    include '../header.php';
+    include 'header.php';
     ?>
     <!-- Header-->
     <div class="breadcrumbs">
