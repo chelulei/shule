@@ -10,12 +10,15 @@ if (isset($_POST['update'])) {
     $class=$_POST['Class'];
     $year=$_POST['Year'];
     $amount =$_POST['Amount'];
+    $tuition =$_POST['Tuition'];
+    $balance=$tuition-$amount;
     echo $update  = "UPDATE payments SET 
                      Student='$student',
                      Class='$class',
                      Term='$term',
                      Year='$year',
-                      Amount='$amount'
+                      Amount='$amount',
+                      Tuition ='$tuition'
                   WHERE id='$id'";
 
     $run=mysqli_query($con,$update);

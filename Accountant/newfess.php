@@ -6,15 +6,11 @@ if(isset($_POST['save'])){
     $class=$_POST['Class'];
     $term=$_POST['Term'];
     $year=$_POST['Year'];
-    $amount =$_POST['Amount'];
-
-
-    $dues=$tution-$amount;
-
-    $balance=$amount-$tution;
-
-   echo  $ins= mysqli_query($con,"INSERT INTO  payments(Student,Class,Term,Year,Amount,Date) 
-                                  VALUES ('$Student','$class','$term','$year','$amount',NOW())");
+    $Tuition =$_POST['Tuition'];
+    $Amount =$_POST['Amount'];
+    $Balance=$Tuition-$Amount;
+   echo  $ins= mysqli_query($con,"INSERT INTO  payments(Student,Class,Term,Year,Tuition,Amount,Balance, Date) 
+                                  VALUES ('$Student','$class','$term','$year','$Tuition','$Amount','$Balance',NOW())");
 
     if($ins){
 

@@ -4,11 +4,7 @@ include 'sidebar.php';
 include 'functions.php';
 include 'connect.php';
 getUser();
-?>
-    <!-- Left Panel -->
-
-
-
+?><!-- Left Panel -->
     <div id="right-panel" class="right-panel">
 
         <!-- Header-->
@@ -42,7 +38,7 @@ getUser();
                         <?php include 'errors.php'?>
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Pay Fees</strong>
+                                <strong class="card-title">School Fees</strong>
                             </div>
                             <div class="card-body">
 
@@ -102,6 +98,14 @@ getUser();
                                             <label for="inputEmail3" class="col-sm-2 control-label">Year</label>
                                             <div class="col-sm-6">
                                                 <select id="yearpicker" name="Year" class="form-control"></select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="inputEmail3" class="col-sm-2 control-label">Fees</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" name="Tuition" id="" class="form-control" placeholder="CURRENT TUTION">
+                                                <!-- /# -->
                                             </div>
                                         </div>
                                         <div class="form-group row">

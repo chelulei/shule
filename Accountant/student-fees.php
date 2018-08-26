@@ -5,11 +5,7 @@ include 'functions.php';
 include 'connect.php';
 getUser();
 ?>
-
     <!-- Left Panel -->
-
-
-
     <div id="right-panel" class="right-panel">
 
         <!-- Header-->
@@ -35,7 +31,6 @@ getUser();
                 </div>
             </div>
         </div>
-
         <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
@@ -55,13 +50,15 @@ getUser();
                                         <th>Tearm</th>
                                         <th>Year</th>
                                         <th>Amount</th>
+                                        <th>Balance</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
                                     <?php
                                     include 'connect.php';
 
-                                    $result = "SELECT * FROM payments";
+                                    $result = "SELECT * FROM payments p JOIN students s ON(p.Student=s.adm_No)
+                                    JOIN class c ON(p.Class=c.classId)";
                                     $select= mysqli_query($con,$result);
                                     //start of loop for displaying products
                                     while($row=mysqli_fetch_array($select)):
@@ -71,17 +68,20 @@ getUser();
                                         $term=$row['Term'];
                                         $year=$row['Year'];
                                         $amount =$row['Amount'];
+                                        $Balance =$row['Balance'];
+                                        $Surname =$row['Surname'];
+                                        $Firstname =$row['Firstname'];
+                                        $Middlename =$row['Middlename'];
                                         ?>
                                       <tr>
-                                          <td><?php echo  $Student;?> </td>
-                                        <td><?php echo  $class;?> </td>
+                                          <td><?php echo ucwords($Surname.' '.$Firstname.' '.$Middlename);?> </td>
+                                        <td><?php echo  ucwords($class);?> </td>
                                         <td><?php echo  $term; ?></td>
                                         <td><?php echo   $year; ?></td>
                                         <td><?php echo $amount;?></td>
+                                          <td><?php echo $Balance;?></td>
                                         <td>
                                             <div class="btn-group">
-                                                <a href="#scrollmodal" class="btn btn-outline-info btn-md profile"
-                                                   data-toggle="modal" id="<?php echo   $Id; ?>"><i class="fa fa-info-circle" aria-hidden="true"></i></i>View</a>
                                                 <a href="page-editfees.php?edit=<?php echo $Id; ?>"
                                                    class="btn btn-outline-primary"  >
                                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>

@@ -23,6 +23,7 @@ if (isset($_GET['edit'])) {
     $term=$row['Term'];
     $year=$row['Year'];
     $amount =$row['Amount'];
+    $tuition =$row['Tuition'];
 
 }
 ?>
@@ -168,6 +169,13 @@ if (isset($_GET['edit'])) {
                                             <label for="inputEmail3" class="col-sm-2 control-label">Amount</label>
                                             <div class="col-sm-6">
                                                 <input type="text" name="Amount" id="" class="form-control" value="<?php echo $amount;?>">
+                                                <!-- /# -->
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputEmail3" class="col-sm-2 control-label">Fees</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" name="Tuition" id="" class="form-control" value="<?php echo $tuition;?>">
                                                 <!-- /# -->
                                             </div>
                                         </div>
