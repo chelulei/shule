@@ -1,10 +1,11 @@
 
 <?php
-
+error_reporting(0);
+include 'connect.php';
 include 'head.php';
 include 'sidebar.php';
-
-include 'connect.php';
+include 'functions.php';
+getUser();
 if (isset($_GET['update'])) {
    $id=$_GET['update'];
     $class_sql="SELECT * FROM class WHERE  classId= '$id'";
@@ -31,7 +32,7 @@ $students=$class_rs['students'];
     <!-- Header-->
     <?php
 
-    include '../header.php';
+    include 'header.php';
     ?>
     <!-- /header -->
     <!-- Header-->

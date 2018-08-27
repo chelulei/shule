@@ -1,11 +1,15 @@
 <?php
 include 'head.php';
+
+include 'connect.php';
 include 'sidebar.php';
+include 'functions.php';
+getUser();
 ?>
 
     <div id="right-panel" class="right-panel">
     <!-- Header-->
-<?php include '../header.php'; ?>
+<?php include 'header.php'; ?>
     <!-- /header -->
     <!-- Header-->
     <div class="breadcrumbs">
@@ -64,7 +68,6 @@ include 'sidebar.php';
                             //set counter variable 
                             $counter = 1;
 
-                            include 'connect.php';
 
                             $result = "SELECT * FROM class c JOIN user u ON(c.Classteacher=u.id) ";
 

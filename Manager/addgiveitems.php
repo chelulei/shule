@@ -1,25 +1,25 @@
 <?php
-	include '../connect.php';
+	include 'connect.php';
 
 	if (isset($_POST['save'])) {
 
 		
 		$date=$_POST['date'];
 	    $item=$_POST['item'];
-	     $quanitity=$_POST['quanitity'];
+	     $quantity=$_POST['quantity'];
 	     $givento=$_POST['givento'];
 
 	    $comment=$_POST['comment'];
 	  
-$sql = "INSERT INTO giveitems (date,item, quanitity, givento, comment ) 
-    VALUES ('$date', '$item',  '$quanitity', '$givento', '$comment' )";
+$sql =mysqli_query($con, "INSERT INTO giveitems (date,item, quantity, givento, comment ) 
+    VALUES ('$date', '$item',  '$quantity', '$givento', '$comment' )");
 		
-		if ($con->query($sql) === TRUE){
-		 header("Location:page-giveitems.php?success=User successfully added");
-		exit();}
+		if ($sql){
+		 header("Location:page-giveitems.php?success=Item successfully added");
+	    }
 		else {
-			echo "Error: " . $sql . "<br>" . $con->error;
+            header("Location:Page-addgiveitems.php?error=Error");
 		}
-		$con->close();
+
 	}
 ?>

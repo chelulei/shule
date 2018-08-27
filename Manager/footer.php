@@ -1,8 +1,11 @@
 <script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
 <script src="assets/js/vendor/jquery-ui.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/sweetalert.min.js"></script>
+<script src="assets/js/moment.min.js"></script>
 <script src="assets/js/lib/data-table/jquery.dataTables.min.js"></script>
 <script src="assets/js/lib/data-table/dataTables.bootstrap4.min.js"></script>
-<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/fullcalendar.min.js"></script>
 <script src="assets/js/plugins.js"></script>
 <script src="assets/js/main.js"></script>
 
@@ -29,15 +32,41 @@
     if(typeof window.history.pushState == 'function') {
         window.history.pushState({}, "Hide", '<?php echo $_SERVER['PHP_SELF'];?>');
     }
-     /* edit students  */
+        /*Sweet Alert*/
+        $('.delete_link').click(function(e){
+            e.preventDefault();
+            var link = $(this).attr('href');
+            swal({
+                    title: 'Are you sure?',
+                    text: 'You will not be able to recover this data!',
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!',
+                    cancelButtonText: 'No, cancel!',
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function(isConfirm) {
+                    if (isConfirm) {
+                        swal(
+                            'Deleted!',
+                            'Your data has been deleted.',
+                            'success'
+                        );
+                        window.location=link
+                    } else {
+                        swal(
+                            'Cancelled',
+                            'Your data  is safe :)',
+                            'error'
+                        );
+                    }
+                });
 
-        $(".delete_link").click(function(e){
-            if(!confirm('Are you sure you want to delete this data?')){
-                e.preventDefault();
-                return false;
-            }
-            return true;
-        });
+        })
+
 
         /*edit category*/
         $(document).on('click', '.edit_cat', function(){
@@ -57,7 +86,26 @@
         });
         /*-----------------------------------------*/
 
-     $(document).on('click', '.edit_data', function(){  
+        /*edit usergroup*/
+        $(document).on('click', '.edit_g', function(){
+            var g_id = $(this).attr("id");
+            $.ajax({
+                url:"fetch.php",
+                method:"POST",
+                data:{g_id:g_id},
+                dataType:"json",
+                success:function(data){
+                    console.log(data);
+                    $('#groupid').val(data.groupid);
+                    $('#Name').val(data.role);
+                    $('#Description').val(data.Description);
+                }
+            });
+        });
+        /*-----------------------------------------*/
+
+
+        $(document).on('click', '.edit_data', function(){
            var stud_id = $(this).attr("id");  
            $.ajax({  
                 url:"fetch.php",  
@@ -148,6 +196,94 @@
 
           $('#bootstrap-data-table-export').DataTable();
 
+
+        /*calenda*/
+        var calendar = $('#calendar').fullCalendar({
+            editable:true,
+            header:{
+                left:'prev,next today',
+                center:'title',
+                right:'month,agendaWeek,agendaDay'
+            },
+            events: 'load.php',
+            selectable:true,
+            selectHelper:true,
+            select: function(start, end, allDay)
+            {
+                var title = prompt("Enter Event Title");
+                if(title)
+                {
+                    var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
+                    var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
+                    $.ajax({
+                        url:"insert.php",
+                        type:"POST",
+                        data:{title:title, start:start, end:end},
+                        success:function()
+                        {
+                            calendar.fullCalendar('refetchEvents');
+                            alert("Added Successfully");
+                        }
+                    })
+                }
+            },
+            editable:true,
+            eventResize:function(event)
+            {
+                var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+                var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+                var title = event.title;
+                var id = event.id;
+                $.ajax({
+                    url:"update.php",
+                    type:"POST",
+                    data:{title:title, start:start, end:end, id:id},
+                    success:function(){
+                        calendar.fullCalendar('refetchEvents');
+                        alert('Event Update');
+                    }
+                })
+            },
+
+            eventDrop:function(event)
+            {
+                var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+                var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
+                var title = event.title;
+                var id = event.id;
+                $.ajax({
+                    url:"update.php",
+                    type:"POST",
+                    data:{title:title, start:start, end:end, id:id},
+                    success:function()
+                    {
+                        calendar.fullCalendar('refetchEvents');
+                        alert("Event Updated");
+                    }
+                });
+            },
+
+            eventClick:function(event)
+            {
+                if(confirm("Are you sure you want to remove it?"))
+                {
+                    var id = event.id;
+                    $.ajax({
+                        url:"delete.php",
+                        type:"POST",
+                        data:{id:id},
+                        success:function()
+                        {
+                            calendar.fullCalendar('refetchEvents');
+                            alert("Event Removed");
+                        }
+                    })
+                }
+            },
+
+        });
+
+
            /* jQuery(".standardSelect").chosen({
                 disable_search_threshold: 10,
                 no_results_textt: "Oops, nothing found!",
@@ -155,6 +291,7 @@
             });*/
 
 
+    /*end jquery*/
         });
     </script>
 

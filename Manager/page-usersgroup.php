@@ -1,6 +1,9 @@
 
 <?php
 include 'head.php';
+include 'connect.php';
+include 'functions.php';
+getUser();
   include 'sidebar.php';
 ?>
     <div id="right-panel" class="right-panel">
@@ -59,10 +62,7 @@ include 'head.php';
                               <?php 
 
                             //set counter variable 
-                            $counter = 1; 
-                                                    
-                                include 'connect.php';
-                                    
+                            $counter = 1;
                                 $result = "SELECT * FROM usergroup ";
                                 $select= mysqli_query($con,$result);
               
@@ -73,8 +73,9 @@ include 'head.php';
                                         $groupid  =$row['groupid'];
                                         $role=$row['role'];
                                         $Description=$row['Description'];
-                                      echo '<tr>';
-                                          ?> 
+
+                                          ?>
+                                           <tr>
                                               <td><?php echo $counter;   $counter++; //increment counter by 1 on every pass 
                                               ?></td>
                                              
@@ -82,18 +83,17 @@ include 'head.php';
                                               <td><?php echo ucwords($row['Description']);?> </td>
                                             
                                       <td>
-
-                                          <a href="##mediumModal" class="btn btn-primary edit_g"  id="<?php echo $groupid; ?>"   data-toggle="modal" data-target="#mediumModal"><i class=" fa fa-edit"></i> Edit </a>
-
-                                          <a href="delete-user.php?delete=<?php echo  $groupid;?>"><button type="button" class="btn btn-danger delete_link"><i class=" fa fa-trash-o"> </i> Delete</button></a>
+                                          <div class="btn bt-group">
+                                              <a href="#mediumModal" class="btn btn-outline-primary edit_g"  id="<?php echo $groupid; ?>"   data-toggle="modal" data-target="#mediumModal"><i class=" fa fa-edit"></i> Edit </a>
+                                              <a href="delete-usergroup.php?delete=<?php echo $groupid;?>" class="btn btn-outline-danger delete_link"><i class="fa fa-trash-o"></i>DETE</a>
+                                          </div>
+                                          <!-- /.btn bt-group -->
                                              
                                          </td>
-                                    
-                                       <?php endwhile; 
+                                         </tr>
+                                       <?php endwhile; ?>
                                         
-                                echo '</tr>';
-                    
-                        ?>
+
                           </tbody>
                           </table>
                         </div>
@@ -111,14 +111,14 @@ include 'head.php';
                     <div class="modal-dialog modal-md" role="document">
                         <div class="modal-content">
                               <div class="modal-header">
-                                  <h5 class="modal-title" id="mediumModalLabel">Edit User</h5>
+                                  <h5 class="modal-title" id="mediumModalLabel">Edit UserGroup</h5>
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                   </button>
                               </div>
                                 <div class="modal-body">
                                   <div class="card-body">
-                                     <form class="form-validate form-horizontal" method="POST" action="update-users.php">
+                                     <form class="form-validate form-horizontal" method="POST" action="update-usersgroup.php">
                                          <input type="hidden" name="id" id="groupid">
                                          <div class="form-group row">
                                         <label for="colFormLabel" class="col-sm-2 col-form-label">Name</label>

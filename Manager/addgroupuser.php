@@ -1,9 +1,10 @@
 <?php
 
 include("head.php");
-
+include 'connect.php';
+include 'functions.php';
 include 'sidebar.php';
-
+getUser();
 ?>
     <!-- Left Panel -->
 

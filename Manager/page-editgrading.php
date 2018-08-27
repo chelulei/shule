@@ -109,7 +109,7 @@ if (isset($_GET['edit'])) {
 
                                 <hr>
                          <div class="form-group row">
-                             <div class="col-md-6"></div>
+                             <label for="inputEmail3" class="col-sm-2 control-label"></label>
                            <button type="submit" name="update" class="btn btn-primary mr-1">Update</button>
                              <a href="page-gradingsystem.php"> <button type="button" class="btn btn-danger">Cancel</button></a>
                          </div>

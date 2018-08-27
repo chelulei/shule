@@ -2,6 +2,8 @@
 <?php
 include 'head.php';
 include 'connect.php';
+include 'functions.php';
+getUser();
 include 'sidebar.php';
 ?>
 <style>
@@ -87,7 +89,7 @@ include 'sidebar.php';
                                                 <input type="text" name='mail0' placeholder='Email' class="form-control"/>
                                             </td>
                                             <td data-name="desc">
-                                                <textarea name="desc0" placeholder="Description" class="form-control"></textarea>
+                                                <input type="text" name='mail0' placeholder='Email' class="form-control"/>
                                             </td>
                                         </tr>
                                         </tbody>

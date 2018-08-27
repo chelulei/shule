@@ -1,13 +1,14 @@
-<?php 
-
-include("head.php");
-
+<?php
+include "connect.php";
+include "head.php";
+include "functions.php";
+getUser();
 include 'sidebar.php';
 
 ?>
         <!-- Left Panel -->
 
-   
+
 
     <div id="right-panel" class="right-panel">
 

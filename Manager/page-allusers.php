@@ -1,12 +1,15 @@
 
 <?php
+include 'connect.php';
 include 'head.php';
   include 'sidebar.php';
+include 'functions.php';
+getUser();
 ?>
 
     <div id="right-panel" class="right-panel">
        <!-- Header-->
-      <?php  include '../header.php';  ?>
+      <?php  include 'header.php';  ?>
       <!-- /header -->
         <!-- Header-->
       <div class="breadcrumbs">
@@ -55,7 +58,6 @@ include 'head.php';
                                         <th>Phone</th>
                                         <th>Status</th>
                                         <th>Users Roll</th>
-                                        <th>Last Login</th>
                                         <th>Option</th>
                                 
                                       </tr>
@@ -68,7 +70,7 @@ include 'head.php';
                             //set counter variable 
                             $counter = 1; 
                                                     
-                                include 'connect.php';
+
                                     
                                 $result = "SELECT * FROM user ";
                                 $select= mysqli_query($con,$result);
@@ -84,21 +86,15 @@ include 'head.php';
                                         $Email = $row['Email'];                                            
                                         $role=$row['role'];
                                         $status=$row['status'];
-                                        $Login=$row['Login'];
-                                       
-
-
                                           ?> 
                                              <tr>
                                                  <td><?php echo $Surname.' '.$Firstname;?> </td>
                                               <td><?php echo $row['Phone'];?> </td>
                                               <td><?php echo ucwords($row['status']);?> </td>
                                               <td><?php echo ($row['role']);?> </td>
-                                              <td><?php echo $row['Login'];?> </td>
                                             
                                       <td>
                                           <div class="btn-group" role="group" >
-                                              <a href="page-user.php?view=<?php echo $id;?>" class="btn btn-outline-primary"></i>VIEW</a>
                     <a href="page-editusers.php?edit=<?php echo $id;?>" class="btn btn-outline-info"><i class=" fa fa-edit"></i> Edit </a>
                                           <a  href="delete-users.php?delete=<?php echo $id;?>" class="btn btn-outline-danger delete_link"><i class=" fa fa-trash"></i> DELETE </a>
                                           </div>

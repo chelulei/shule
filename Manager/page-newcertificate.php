@@ -47,16 +47,16 @@ getUser();
                         <div class="card-body">
                           <form class="form-validate form-horizontal" method="POST" action="newceretificate.php" id=""  style="margin-left: 250px; margin-right: 50px;">
                               <div class="form-group row">
-                                  <label for="colFormLabel" class="col-sm-2 col-form-label">Date</label>
-                                  <div class="col-sm-10">
+                                  <label for="colFormLabel" class="col-sm-3 col-form-label">Date</label>
+                                  <div class="col-sm-9">
                                       <input type="date" name="Date" id="" class="form-control">
                                       <!-- /# -->
                                       <!-- /# -->
                                   </div>
                               </div>
                               <div class="form-group row">
-                                <label for="colFormLabel" class="col-sm-2 col-form-label">Student's NAME</label>
-                                <div class="col-sm-10">
+                                <label for="colFormLabel" class="col-sm-3 col-form-label">Student's NAME</label>
+                                <div class="col-sm-9">
                                     <select name="Student" id="Student" class="form-control" required>
                                         <option>---- Students's Name   ------</option>
                                         <?php
@@ -75,16 +75,16 @@ getUser();
                               </div>
 
                               <div class="form-group row">
-                                <label for="colFormLabel" class="col-sm-2 col-form-label">Remarks</label>
-                                <div class="col-sm-10">
+                                <label for="colFormLabel" class="col-sm-3 col-form-label">Remarks</label>
+                                <div class="col-sm-9">
                                     <textarea name="Remarks" id="" cols="20" rows="5" class="form-control"></textarea>
                                     <!-- /# -->
                                 </div>
                               </div>
 
                               <div class="form-group row">
-                                <label for="colFormLabel" class="col-sm-2 col-form-label">Co-curriculam Activities</label>
-                                <div class="col-sm-10">
+                                <label for="colFormLabel" class="col-sm-3 col-form-label">Co-curriculam Activities</label>
+                                <div class="col-sm-9">
                                   <input type="text" class="form-control" id="colFormLabel" name="Activities" placeholder="Activities">
                                 </div>
                               </div>
@@ -92,7 +92,7 @@ getUser();
                               <br>
                               <br>
                                <div class="page-title">
-                                   <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
+                                   <label for="colFormLabel" class="col-sm-3 col-form-label"></label>
                                  <input type="submit" value="Save" name ="save" class="btn btn-primary" />
                                    <a href="page-leavingcert.php"><button type="button" class="btn btn-danger">Cancel</button></a>
                                 </div>

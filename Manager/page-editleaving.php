@@ -33,7 +33,7 @@ $row=mysqli_fetch_array($query);
         <!-- Header-->
 
       <div class="breadcrumbs">
-            <div class="col-sm-4">
+            <div class="col-sm-3">
                 <div class="page-header float-left">
                     <div class="page-title">
                         <h1>Dasboard </h1>
@@ -41,7 +41,7 @@ $row=mysqli_fetch_array($query);
                 </div>
             </div>
 
-              <div class="col-sm-8">
+              <div class="col-sm-9">
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
@@ -64,16 +64,16 @@ $row=mysqli_fetch_array($query);
                           <form class="form-validate form-horizontal" method="POST" action="update-cert.php" id=""  style="margin-left: 250px; margin-right: 50px;">
                               <div class="form-group row">
                                   <input type="hidden" name="id" value="<?php echo $id;?>">
-                                  <label for="colFormLabel" class="col-sm-2 col-form-label">Date</label>
-                                  <div class="col-sm-10">
+                                  <label for="colFormLabel" class="col-sm-3 col-form-label">Date</label>
+                                  <div class="col-sm-9">
                                       <input type="date" name="Date" value="<?php echo $date;?>" class="form-control">
                                       <!-- /# -->
                                       <!-- /# -->
                                   </div>
                               </div>
                               <div class="form-group row">
-                                <label for="colFormLabel" class="col-sm-2 col-form-label">Student's NAME</label>
-                                <div class="col-sm-10">
+                                <label for="colFormLabel" class="col-sm-3 col-form-label">Student's NAME</label>
+                                <div class="col-sm-9">
                                     <select name="Student"  class="form-control" required>
                                         <option>---- Student's Name   ------</option>
                                         <?php
@@ -98,8 +98,8 @@ $row=mysqli_fetch_array($query);
                               </div>
 
                               <div class="form-group row">
-                                <label for="colFormLabel" class="col-sm-2 col-form-label">Remarks</label>
-                                <div class="col-sm-10">
+                                <label for="colFormLabel" class="col-sm-3 col-form-label">Remarks</label>
+                                <div class="col-sm-9">
                                     <textarea name="Remarks" id="" cols="20" rows="5" class="form-control">
                                         <?php echo $Remarks;?>
                                     </textarea>
@@ -108,8 +108,8 @@ $row=mysqli_fetch_array($query);
                               </div>
 
                               <div class="form-group row">
-                                <label for="colFormLabel" class="col-sm-2 col-form-label">Co-curriculam Activities</label>
-                                <div class="col-sm-10">
+                                <label for="colFormLabel" class="col-sm-3 col-form-label">Co-curriculam Activities</label>
+                                <div class="col-sm-9">
                                   <input type="text" class="form-control" id="colFormLabel" name="Activities"   value="<?php echo $Activities;?>" >
                                 </div>
                               </div>
@@ -117,7 +117,7 @@ $row=mysqli_fetch_array($query);
                               <br>
                               <br>
                                <div class="page-title">
-                                   <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
+                                   <label for="colFormLabel" class="col-sm-3 col-form-label"></label>
                                  <input type="submit" value="update" name ="update" class="btn btn-primary" />
                                    <a href="page-leavingcert.php"><button type="button" class="btn btn-danger">Cancel</button></a>
                                 </div>

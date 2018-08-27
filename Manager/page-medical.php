@@ -1,9 +1,11 @@
 
 <?php
+include 'connect.php';
 include 'head.php';
 include 'sidebar.php';
 include 'functions.php';
-include 'connect.php';
+
+getUser();
 ?>
 
     <div id="right-panel" class="right-panel">

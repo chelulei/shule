@@ -60,7 +60,6 @@
                          <th>Parent Name</th>
                          <th>Parent Phone</th>
                          <th>Admission Date</th>
-                        <th> Actions </th>
                       </tr>
                     </thead>
                     <tbody>
@@ -96,16 +95,6 @@
                                     <td><?php echo $row['Phone'];?></td>
                                     <td><?php echo ucwords($row['Parentname']);?></td>
                                     <td><?php echo $row['Phone'];?></td>
-                                   
-                          <td> 
-                              
-                          <button type="button" href="page-studentsprofile.php?info=<?php echo  $adm_No; ?>" class="btn btn-info"><i class="fa fa-user"> </i> Profile</button>
-                          <a href="page-editstudents.php?edit=<?php echo  $adm_No; ?>">
-                              <button type="button" class="btn btn-primary"><I class="fa fa-edit"></I> Edit</button>
-                          </a>
-                        <!-- <a href="#"class="btn btn-danger"><i class="fa fa-pencil"> </i>Suspend</a> -->
-                        </td>
-
                            <?php endwhile; 
 
                       echo '</tr>'

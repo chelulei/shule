@@ -1,4 +1,9 @@
-<?php include 'head.php'; ?>
+<?php
+include 'connect.php';
+include 'head.php';
+include 'functions.php';
+getUser();
+?>
 
 <!-- Left Panel -->
    <!-- /#left-panel -->
@@ -61,7 +66,7 @@
                     <tbody>
                      
                       <?php
-                          include 'connect.php';
+
                                     
                                 $result = "SELECT * FROM leaving l JOIN students s ON(l.Student = s.adm_No)";
                                 $select= mysqli_query($con,$result);

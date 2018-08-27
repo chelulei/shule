@@ -21,9 +21,9 @@
 	    $Status=$_POST['Status'];
 
 $sql = "INSERT INTO 
-   teacher (TSC_NO, Surname,Middlename,Firstname,Dateofbirth,Gender,Homeaddress,Email,Phone, Designation,Classes,DateEmp,YearsExp,Resume,Salary,Status) 
+   teacher (TSC_NO, Surname,Middlename,Firstname,Dateofbirth,Gender,Homeaddress,Email,Image,Phone, Designation,Classes,DateEmp,YearsExp,Resume,Salary,Status) 
     VALUES 
-    ('$TSC_NO','$Surname', '$Middlename', '$Firstname', '$Dateofbirth', '$Gender', '$Homeaddress', '$Email', '$Phone',
+    ('$TSC_NO','$Surname', '$Middlename', '$Firstname', '$Dateofbirth', '$Gender', '$Homeaddress', '$Email','default.png', '$Phone',
      '$Designation','$Classes', '$DateEmp','$YearsExp', '$Resume', '$Salary', 'Active')";
 		
 		$run=$db->query($sq);

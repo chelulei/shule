@@ -6,9 +6,9 @@ include 'sidebar.php';
 getUser();
 ?>
 
-    <div id="right-panel" class="right-panel">
+<div id="right-panel" class="right-panel">
     <!-- Header-->
-<?php  include 'header.php';  ?>
+    <?php  include 'header.php';  ?>
     <!-- /header -->
     <!-- Header-->
     <div class="breadcrumbs">
@@ -33,27 +33,27 @@ getUser();
 
 
     <div class="content mt-3">
-    <div class="animated fadeIn">
+        <div class="animated fadeIn">
 
-        <div class="row">
-            <div class="col-md-12">
-                <?php include 'errors.php'?>
-                <div class="card">
-                    <div class="card-header">
-                        <strong class="card-title">Classes </strong>
+            <div class="row">
+                <div class="col-md-12">
+                    <?php include 'errors.php'?>
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Classes </strong>
+                        </div>
+                        <div class="card-body">
+                            <div id="calendar"></div>
+                            </table>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <div id="calender"></div>
-                        </table>
-                    </div>
-                </div>
 
 
-            </div><!-- .animated -->
-        </div><!-- .content -->
+                </div><!-- .animated -->
+            </div><!-- .content -->
 
 
-    </div><!-- /#right-panel -->
+        </div><!-- /#right-panel -->
 
-    <!-- Right Panel -->
-<?php include 'footer.php';?>
+        <!-- Right Panel -->
+        <?php include 'footer.php';?>

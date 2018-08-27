@@ -1,7 +1,9 @@
 <?php 
 
 include("head.php");
-
+include 'functions.php';
+include 'connect.php';
+getUser();
 include 'sidebar.php';
 
 ?>

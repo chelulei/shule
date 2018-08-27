@@ -3,6 +3,8 @@
 include 'head.php';
 include 'connect.php';
 include 'sidebar.php';
+include 'functions.php';
+getUser();
 ?>
 <style>
     #auto{

@@ -9,9 +9,6 @@
       $Total = $Quantity * $Unitprice ;
       $Person = $_POST['Person'];
       $Receipt = $_POST['Receipt'];
-      $Receipt=$_FILES['Receipt']['name'];
-      $image_tmp=$_FILES['Receipt']['tmp_name'];
-      move_uploaded_file($image_tmp,"images/$Receipt");
       $sql = "INSERT INTO items ( Date, Productname, Quantity, Unitprice, Person, Total, Receipt, Description) 
               VALUES (NOW(),'$Productname','$Quantity','$Unitprice', '$Person', '$Total', '$Receipt', '$Description' )";
 $run= mysqli_query($con, $sql);

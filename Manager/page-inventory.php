@@ -29,7 +29,7 @@ include 'connect.php';
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="Page-addstock.php" class="btn btn-info"><i class="fa fa-plus"></i> Add Stock</a></li>
-                            <li><a href="page-management.php" class="btn btn-info"><i class="fa fa-folder-open"></i>Items</a></li>
+                            <li><a href="page-items.php" class="btn btn-info"><i class="fa fa-folder-open"></i>Items</a></li>
                             <li> <a href="page-itemscategory.php" class="btn btn-info"><i class="fa-gear(alias)"></i>Items Category</a> </li>
                         </ol>
                     </div>

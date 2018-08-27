@@ -102,7 +102,8 @@ getUser()
                                 </div>
                               </div>
                 
-                                    <div class='form-group'><div class="col-md-3"></div><div class="col-md-9">
+                                    <div class='form-group'>
+                                        <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
                                         <input type="submit" name="submit" value="Save" id='submit' class='btn btn-primary' />
                                           <a href="page-medical.php" class="btn btn-danger">Cancel</a></div>
                                     </div>

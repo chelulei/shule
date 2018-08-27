@@ -51,10 +51,10 @@
                       <li class="menu-item-has-children dropdown">
                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-shopping-cart" style="font-size:16px;"></i>Inventory</a>
                      <ul class="sub-menu children dropdown-menu" >
-                        <li><i class="fa fa-table" ></i><a href="page-subjects.php">Inventory Trend</a></li>
-                        <li><i class="fa fa-table"></i><a href="page-inventorymanagement.php">Manage Items</a></li>
+                        <li><i class="fa fa-table" ></i><a href="#">Inventory Trend</a></li>
+                        <li><i class="fa fa-table"></i><a href="page-items.php">Manage Items</a></li>
                         <li><i class="fa fa-random"></i><a href="page-itemscategory.php">Items Category</a></li>
-                        <li><i class="fa fa-plus-circle"></i><a href="page-addstock.php">Add Items(Stock)</a></li>
+                        <li><i class="fa fa-plus-circle"></i><a href="Page-additems.php">Add Items(Stock)</a></li>
                         <li><i class="fa fa-minus-circle"></i><a href="page-giveitems.php">Giving Out Itmes</a></li>
                         <li><i class="fa fa-shopping-cart"></i><a href="page-stocktaking.php">Stock Taking</a></li>
                      </ul>
@@ -63,7 +63,7 @@
                      <li class="menu-item-has-children dropdown">
                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-user" style="font-size:16px;"></i>User</a>
                      <ul class="sub-menu children dropdown-menu" >
-                        <li><i class="fa fa-clock-o" ></i><a href="page-employeeattendance.php">Employees Attendance</a></li>
+<!--                        <li><i class="fa fa-clock-o" ></i><a href="page-employeeattendance.php">Employees Attendance</a></li>-->
                          <li><i class="fa fa-user" ></i><a href="page-teachers.php">Teachers</a></li>
                         <li><i class="fa fa-users"></i><a href="page-parents.php">Parents</a></li>
                         <li><i class="fa fa-bars"></i><a href="page-students.php">Students</a></li>
@@ -77,9 +77,9 @@
                       <li class="menu-item-has-children dropdown">
                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-cogs" style="font-size:16px;"></i>Settings</a>
                      <ul class="sub-menu children dropdown-menu" >
-                        <li><i class="fa fa-lock"></i><a href="page-subjects.php">Permissions</a></li>
-                        <li><i class="fa fa-download"></i><a href="page-grades.php">Data BackUp</a></li>
-                        <li><i class="fa fa-home"></i><a href="page-gradingsystem.php">Class Groups</a></li>
+                        <li><i class="fa fa-lock"></i><a href="#">Permissions</a></li>
+                        <li><i class="fa fa-download"></i><a href="backup.php">Data BackUp</a></li>
+                        <li><i class="fa fa-home"></i><a href="#">Class Groups</a></li>
                      </ul>
                     </li>
                 </ul>

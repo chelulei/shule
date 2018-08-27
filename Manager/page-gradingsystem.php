@@ -1,7 +1,9 @@
 <?php
+include 'connect.php';
 include 'head.php';
   include 'sidebar.php';
 include "functions.php";
+getUser();
 ?>
 
     <div id="right-panel" class="right-panel">
@@ -60,7 +62,7 @@ include "functions.php";
                             //set counter variable 
                             $counter = 1; 
                                                     
-                                include 'connect.php';
+
 
                               $result="SELECT * FROM gradingsystem  g JOIN subject s ON g.subject = s.SubIdNo";
                                 $select= mysqli_query($con,$result);

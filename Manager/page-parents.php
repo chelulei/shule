@@ -55,7 +55,6 @@ include 'sidebar.php';
                                         <th>Phone</th>
                                         <th>Status</th>
                                         <th>Users Roll</th>
-                                        <th>Last Login</th>
                                         <th>Option</th>
 
                                     </tr>
@@ -84,21 +83,15 @@ include 'sidebar.php';
                                         $Email = $row['Email'];
                                         $role=$row['role'];
                                         $status=$row['status'];
-                                        $Login=$row['Login'];
-
-
-
                                         ?>
                                         <tr>
                                             <td><?php echo $Surname.' '.$Firstname;?> </td>
                                             <td><?php echo $row['Phone'];?> </td>
                                             <td><?php echo ucwords($row['status']);?> </td>
                                             <td><?php echo ($row['role']);?> </td>
-                                            <td><?php echo $row['Login'];?> </td>
 
                                             <td>
                                                 <div class="btn-group" role="group" >
-                                                    <a href="page-user.php?view=<?php echo $id;?>" class="btn btn-outline-primary"></i>VIEW</a>
                                                     <a href="page-editusers.php?edit=<?php echo $id;?>" class="btn btn-outline-info"><i class=" fa fa-edit"></i> Edit </a>
                                                     <a  href="delete-users.php?delete=<?php echo $id;?>" class="btn btn-outline-danger delete_link"><i class=" fa fa-trash"></i> DELETE </a>
                                                 </div>
